@@ -1,8 +1,10 @@
 class CreateAdmins < ActiveRecord::Migration
   def change
-    create_table :admins do |t|
+       execute "CREATE TABLE admins(								 \
+    	adminID			INTEGER										,\
 
-      t.timestamps null: false
-    end
+    	PRIMARY KEY(adminID)										,\
+    	FOREIGN kEY (adminID) REFERENCES users(collegeID) 			 \
+    	);"
   end
 end

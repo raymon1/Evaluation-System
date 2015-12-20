@@ -1,8 +1,12 @@
 class CreateCourses < ActiveRecord::Migration
   def change
-    create_table :courses do |t|
+        execute "CREATE TABLE courses(						 \
+    	code			VARCHAR(10)							,\
+    	name			VARCHAR(100)	NOT NULL     		,\
+    	studyingYear	INTEGER								,\
 
-      t.timestamps null: false
-    end
+    	PRIMARY KEY (code)									,\
+    	CHECK(studyingYear > 0)								\
+    	);"
   end
 end
