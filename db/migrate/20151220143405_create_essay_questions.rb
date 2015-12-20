@@ -1,8 +1,10 @@
 class CreateEssayQuestions < ActiveRecord::Migration
   def change
-    create_table :essay_questions do |t|
-
-      t.timestamps null: false
-    end
+       	execute "CREATE TABLE essay_questions(							 	\
+   	    essayID				INTEGER											,\
+   	    answer				TEXT											,\
+    	PRIMARY KEY (essayID)												 ,\
+    	FOREIGN kEY (essayID) REFERENCES questions(questionID) 				\
+    	);"
   end
 end

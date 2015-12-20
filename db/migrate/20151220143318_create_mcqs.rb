@@ -1,8 +1,11 @@
 class CreateMcqs < ActiveRecord::Migration
   def change
-    create_table :mcqs do |t|
-
-      t.timestamps null: false
-    end
+        execute "CREATE TABLE mcqs(										 	\
+   	    mcqID				INTEGER											,\
+   	    answer				TEXT											,\
+    	PRIMARY KEY (mcqID)													,\
+    	FOREIGN kEY (mcqID) REFERENCES questions(questionID) 				,\
+    	CHECK(mark > 0)														 \
+    	);"
   end
 end

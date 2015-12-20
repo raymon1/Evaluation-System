@@ -6,7 +6,7 @@ class CreateForms < ActiveRecord::Migration
     	instructorID	INTEGER					   							,\
     	title			VARCHAR(100)										,\
     	no0fQuestions	INTEGER												,\
-    	timeAndDate		TIMEStAMP											,\
+    	timeAndDate		TIMESTAMP											,\
     	PRIMARY KEY (formID)												,\
     	FOREIGN kEY (instructorID) REFERENCES instructors(instructorID) 	,\
     	FOREIGN kEY (courseID) REFERENCES courses(code) 		 			,\

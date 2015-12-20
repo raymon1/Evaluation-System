@@ -1,8 +1,11 @@
 class CreateNumericalQuestions < ActiveRecord::Migration
   def change
-    create_table :numerical_questions do |t|
+        execute "CREATE TABLE numerical_questions(										 \
+   	    numericalQuestionID				INTEGER											,\
+   	    answer							REAL											,\
+    	PRIMARY KEY (numericalQuestionID)											  	,\
+    	FOREIGN kEY (numericalQuestionID) REFERENCES questions(questionID) 				 \
+    	);"
 
-      t.timestamps null: false
-    end
   end
 end
