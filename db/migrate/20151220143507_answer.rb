@@ -5,7 +5,7 @@ class Answer < ActiveRecord::Migration
    	    questionID				INTEGER											,\
     	PRIMARY KEY (studentID,questionID)										,\
     	FOREIGN kEY (studentID) REFERENCES students(studentID) 					,\
-    	FOREIGN kEY (questionID) REFERENCES students(questionID) 				\
+    	FOREIGN kEY (questionID) REFERENCES questions(questionID) 				\
     	);"
   end
 end

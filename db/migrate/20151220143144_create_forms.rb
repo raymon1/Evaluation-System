@@ -2,7 +2,7 @@ class CreateForms < ActiveRecord::Migration
   def change
    	    execute "CREATE TABLE forms(										 \
    	    formID			INTEGER												,\
-    	courseID		INTEGER												,\
+    	courseID		VARCHAR(10)												,\
     	instructorID	INTEGER					   							,\
     	title			VARCHAR(100)										,\
     	no0fQuestions	INTEGER												,\

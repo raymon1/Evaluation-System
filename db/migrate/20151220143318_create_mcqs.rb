@@ -4,8 +4,7 @@ class CreateMcqs < ActiveRecord::Migration
    	    mcqID				INTEGER											,\
    	    answer				TEXT											,\
     	PRIMARY KEY (mcqID)													,\
-    	FOREIGN kEY (mcqID) REFERENCES questions(questionID) 				,\
-    	CHECK(mark > 0)														 \
+    	FOREIGN kEY (mcqID) REFERENCES questions(questionID) 				\
     	);"
   end
 end

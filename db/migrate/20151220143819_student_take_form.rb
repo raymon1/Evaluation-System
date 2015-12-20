@@ -7,8 +7,7 @@ class StudentTakeForm < ActiveRecord::Migration
    	    studentMark			REAL											,\
     	PRIMARY KEY (formID,studentID)										,\
     	FOREIGN kEY (studentID) REFERENCES students(studentID) 				,\
-    	FOREIGN kEY (formID) REFERENCES forms(formID) 						,\
-    	CHECK(mark > 0)														 \
+    	FOREIGN kEY (formID) REFERENCES forms(formID) 						\
     	);"
   end
 end

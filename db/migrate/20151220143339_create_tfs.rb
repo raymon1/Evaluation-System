@@ -4,8 +4,7 @@ class CreateTfs < ActiveRecord::Migration
    	    tfID				INTEGER											,\
    	    answer				BOOLEAN											,\
     	PRIMARY KEY (tfID)													,\
-    	FOREIGN kEY (tfID) REFERENCES questions(questionID) 				,\
-    	CHECK(mark > 0)														 \
+    	FOREIGN kEY (tfID) REFERENCES questions(questionID) 				\
     	);"
   end
 end
