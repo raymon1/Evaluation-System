@@ -4,7 +4,6 @@ class CreateCourses < ActiveRecord::Migration
     	code			VARCHAR(10)							,\
     	name			VARCHAR(100)	NOT NULL     		,\
     	studyingYear	INTEGER								,\
-
     	PRIMARY KEY (code)									,\
     	CHECK(studyingYear > 0)								\
     	);"
