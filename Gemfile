@@ -45,3 +45,10 @@ group :development do
   gem 'spring'
 end
 
+
+gem 'bootstrap-sass', '~> 3.3.6'
+
+#Provides Sprockets implementation for Rails 4.x (and beyond) Asset Pipeline.
+gem 'sprockets-rails', :require => 'sprockets/railtie'
+
+
