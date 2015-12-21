@@ -75,7 +75,7 @@
 					<div class="page-header">
 						<h3>Login </h3>
 					</div>
-					<form>
+					<form method="post" action="/pages/home">
 						<div align="center">
 							<img src=<%= asset_path 'Capture1.PNG' %> >
 						</div>
@@ -83,7 +83,7 @@
 							<label for="exampleInputEmail1">Email</label>
 							<div class="input-group">
 								<span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-user"></span></span>
-								<input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+								<input type="email" name="email_entered" class="form-control" id="exampleInputEmail1" placeholder="Email">
 
 							</div>
 						</div>
@@ -91,7 +91,7 @@
 							<label for="exampleInputPassword1">Password</label>
 							<div class="input-group">
 								<span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-star"></span></span>
-								<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+								<input type="password" name="password_entered" class="form-control" id="exampleInputPassword1" placeholder="Password">
 
 							</div>
 						</div>
@@ -104,8 +104,8 @@
 								
 
 								<!-- mesh 3rfa malooooooo msh 3rfa a3mlo yft7 f nfs el page w hwa 3l ymen-->
-
-								<button type="submit"  class="btn btn-primary"   align = "right-side" onClick="location.href='StudentView.html'"><span class="glyphicon glyphicon-lock"></span>Login</button>
+								
+								<button type="submit" href="/pages/home" class="btn btn-primary" align = "right-side" onClick="location.href='/pages/home'"><span class="glyphicon glyphicon-lock"></span> Login</button>
 
 								<!-- -->
 								<p> <br/></p>
