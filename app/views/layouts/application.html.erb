@@ -6,9 +6,42 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
+<body style="background:#dfeff5">
 
 <%= yield %>
 
-</body>
+
+<section id="contact">
+         <footer>
+            <div class="container">
+               <div class="row">
+                  <div class="col-md-12 col-lg-12">
+                     <div class="wow" data-wow-delay="0.4s">
+                        <div class="page-scroll marginbot-30">
+                           <a href="#intro" id="totop" class="btn btn-circle">
+                           <i class="fa fa-angle-double-up animated"></i>
+                           </a>
+                        </div>
+                     </div>
+                     <p><a href="<%= root_path %>" target="_blank" style="color: white">EV-Sys</a> | <a href="http://egy-com.org/" target="_blank" style="color: white">ASU</a></p>
+                     
+                     </p>                
+                        
+                     <p>
+                        ev-sys@eng.asu.edu.eg
+                     </p>
+
+                       <ul class="company-social" style="text-align: center">
+                          <li class="social-facebook"><a href="https://www.facebook.com/pages/Faculty-of-Engineering-Ain-Shams-University/112035555475264?fref=ts" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                          
+                        
+                        </ul> 
+
+                  </div>
+               </div>
+            </div>
+         </footer>
+      </section>
 </html>
+
+
