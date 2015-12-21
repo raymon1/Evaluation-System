@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
 
+
+  get 'pages/home' => 'pages#home'
+
   devise_for :users
 
   resources :questions
@@ -14,7 +17,6 @@ Rails.application.routes.draw do
   root 'pages#login'
 
 
-  post 'pages/home'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

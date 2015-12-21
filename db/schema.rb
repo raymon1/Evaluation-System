@@ -126,14 +126,14 @@ ActiveRecord::Schema.define(version: 20151221151457) do
   end
 
   create_table "users", primary_key: "collegeid", force: :cascade do |t|
-    t.date     "dateofbirth",                                          null: false
-    t.string   "gender",                 limit: 7,    default: "male", null: false
+    t.date     "dateofbirth"
+    t.string   "gender",                 limit: 7,    default: "male"
     t.string   "image",                  limit: 1000
     t.string   "nationalid",             limit: 20
-    t.string   "address",                limit: 1000,                  null: false
-    t.string   "firstname",              limit: 30,                    null: false
-    t.string   "middlename",             limit: 30,                    null: false
-    t.string   "lastname",               limit: 30,                    null: false
+    t.string   "address",                limit: 1000
+    t.string   "firstname",              limit: 30
+    t.string   "middlename",             limit: 30
+    t.string   "lastname",               limit: 30
     t.string   "email",                               default: "",     null: false
     t.string   "encrypted_password",                  default: "",     null: false
     t.string   "reset_password_token"
