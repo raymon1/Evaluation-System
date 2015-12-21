@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
 
-  get 'pages/home' => 'pages#home'
+  post 'pages/home' => 'pages#home'
 
   devise_for :users
 
