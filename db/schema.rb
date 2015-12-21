@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151220205058) do
+ActiveRecord::Schema.define(version: 20151221151457) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -126,17 +126,29 @@ ActiveRecord::Schema.define(version: 20151220205058) do
   end
 
   create_table "users", primary_key: "collegeid", force: :cascade do |t|
-    t.date   "dateofbirth",                               null: false
-    t.string "gender",      limit: 7,    default: "male", null: false
-    t.string "image",       limit: 1000
-    t.string "nationalid",  limit: 20
-    t.string "address",     limit: 1000,                  null: false
-    t.string "firstname",   limit: 30,                    null: false
-    t.string "middlename",  limit: 30,                    null: false
-    t.string "lastname",    limit: 30,                    null: false
+    t.date     "dateofbirth",                                          null: false
+    t.string   "gender",                 limit: 7,    default: "male", null: false
+    t.string   "image",                  limit: 1000
+    t.string   "nationalid",             limit: 20
+    t.string   "address",                limit: 1000,                  null: false
+    t.string   "firstname",              limit: 30,                    null: false
+    t.string   "middlename",             limit: 30,                    null: false
+    t.string   "lastname",               limit: 30,                    null: false
+    t.string   "email",                               default: "",     null: false
+    t.string   "encrypted_password",                  default: "",     null: false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",                       default: 0,      null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.inet     "current_sign_in_ip"
+    t.inet     "last_sign_in_ip"
   end
 
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["nationalid"], name: "users_nationalid_key", unique: true, using: :btree
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
   add_foreign_key "admins", "users", column: "adminid", primary_key: "collegeid", name: "admins_adminid_fkey"
   add_foreign_key "answers", "questions", column: "questionid", primary_key: "questionid", name: "answers_questionid_fkey"
