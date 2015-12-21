@@ -12,6 +12,10 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery.scrollTo
+//= require jquery.easing.min
 //= require turbolinks
-//= require_tree .
 //= require bootstrap-sprockets
+//= require wow.min
+//= require custom
+//= require_tree .
