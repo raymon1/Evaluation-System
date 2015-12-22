@@ -1,12 +1,12 @@
 class Enrollin < ActiveRecord::Migration
   def change
   	 execute "CREATE TABLE enrollins(						           \
-    	courseID		VARCHAR(10)									                    ,\
-    	studentID		INTEGER					   				                  ,\
+    	course_id		VARCHAR(10)									                    ,\
+    	student_id		INTEGER					   				                  ,\
     	semester		VARCHAR(20)			NOT NULL			              ,\
-    	PRIMARY KEY (studentID,courseID)						            ,\
-    	FOREIGN kEY (studentID) REFERENCES students(studentID) 	,\
-    	FOREIGN kEY (courseID) REFERENCES courses(code) 		      \
+    	PRIMARY KEY (student_id,course_id)						            ,\
+    	FOREIGN kEY (student_id) REFERENCES students(student_id) 	,\
+    	FOREIGN kEY (course_id) REFERENCES courses(code) 		      \
     	);"
   end
 end

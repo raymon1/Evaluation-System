@@ -1,11 +1,11 @@
 class Answer < ActiveRecord::Migration
   def change
   	    execute "CREATE TABLE answers(										 	\
-   	    studentID				INTEGER											,\
-   	    questionID				INTEGER											,\
-    	PRIMARY KEY (studentID,questionID)										,\
-    	FOREIGN kEY (studentID) REFERENCES students(studentID) 					,\
-    	FOREIGN kEY (questionID) REFERENCES questions(questionID) 				\
+   	    student_id				INTEGER											,\
+   	    question_id				INTEGER											,\
+    	PRIMARY KEY (student_id,question_id)										,\
+    	FOREIGN kEY (student_id) REFERENCES students(student_id) 					,\
+    	FOREIGN kEY (question_id) REFERENCES questions(question_id) 				\
     	);"
   end
 end

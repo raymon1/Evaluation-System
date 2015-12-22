@@ -1,10 +1,10 @@
 class CreateAdmins < ActiveRecord::Migration
   def change
        execute "CREATE TABLE admins(								 \
-    	adminID			INTEGER										,\
+    	admin_id			INTEGER										,\
 
-    	PRIMARY KEY(adminID)										,\
-    	FOREIGN kEY (adminID) REFERENCES users(collegeID) 			 \
+    	PRIMARY KEY(admin_id)										,\
+    	FOREIGN kEY (admin_id) REFERENCES users(college_id) 			 \
     	);"
   end
 end

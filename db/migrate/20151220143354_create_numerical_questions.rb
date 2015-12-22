@@ -1,10 +1,10 @@
 class CreateNumericalQuestions < ActiveRecord::Migration
   def change
         execute "CREATE TABLE numerical_questions(										 \
-   	    numericalQuestionID				INTEGER											,\
+   	    numerical_question_id				INTEGER											,\
    	    answer							REAL											,\
-    	PRIMARY KEY (numericalQuestionID)											  	,\
-    	FOREIGN kEY (numericalQuestionID) REFERENCES questions(questionID) 				 \
+    	PRIMARY KEY (numerical_question_id)											  	,\
+    	FOREIGN kEY (numerical_question_id) REFERENCES questions(question_id) 				 \
     	);"
 
   end

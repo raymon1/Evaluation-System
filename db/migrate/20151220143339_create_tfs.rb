@@ -1,10 +1,10 @@
 class CreateTfs < ActiveRecord::Migration
   def change
         execute "CREATE TABLE tfs(										 	\
-   	    tfID				INTEGER											,\
+   	    tf_id				INTEGER											,\
    	    answer				BOOLEAN											,\
-    	PRIMARY KEY (tfID)													,\
-    	FOREIGN kEY (tfID) REFERENCES questions(questionID) 				\
+    	PRIMARY KEY (tf_id)													,\
+    	FOREIGN kEY (tf_id) REFERENCES questions(question_id) 				\
     	);"
   end
 end

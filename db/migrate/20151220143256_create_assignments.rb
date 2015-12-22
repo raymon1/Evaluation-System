@@ -1,10 +1,10 @@
 class CreateAssignments < ActiveRecord::Migration
   def change
         execute "CREATE TABLE assignments(										 \
-   	    assignmentID		INTEGER												,\
+   	    assignment_id		INTEGER												,\
     	deadline		TIMESTAMP												,\
-    	PRIMARY KEY (assignmentID)												,\
-    	FOREIGN kEY (assignmentID) REFERENCES forms(formID) 					\
+    	PRIMARY KEY (assignment_id)												,\
+    	FOREIGN kEY (assignment_id) REFERENCES forms(form_id) 					\
     	);"
   end
 end

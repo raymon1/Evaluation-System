@@ -1,9 +1,9 @@
 class McqChoice < ActiveRecord::Migration
   def change
   	   execute "CREATE TABLE mcq_choices(									\
-   	    mcqID				INTEGER											,\
+   	    mcq_id			INTEGER											,\
    	    choice				TEXT											,\
-    	PRIMARY KEY (mcqID)													\
+    	PRIMARY KEY (mcq_id)													\
     	);"
   end
 end

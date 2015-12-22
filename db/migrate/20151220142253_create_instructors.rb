@@ -1,11 +1,11 @@
 class CreateInstructors < ActiveRecord::Migration
   def change
         execute "CREATE TABLE instructors(						 \
-    	instructorID	INTEGER									,\
+    	instructor_id	INTEGER									,\
     	major			VARCHAR(100) 							,\
 
-    	PRIMARY KEY (instructorID)								,\
-    	FOREIGN kEY (instructorID) REFERENCES users(collegeID)   \
+    	PRIMARY KEY (instructor_id)								,\
+    	FOREIGN kEY (instructor_id) REFERENCES users(college_id)   \
 
     	);"
   end

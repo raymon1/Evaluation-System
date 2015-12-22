@@ -3,9 +3,9 @@ class CreateCourses < ActiveRecord::Migration
         execute "CREATE TABLE courses(						 \
     	code			VARCHAR(10)							,\
     	name			VARCHAR(100)	NOT NULL     		,\
-    	studyingYear	INTEGER								,\
+    	studying_year	INTEGER								,\
     	PRIMARY KEY (code)									,\
-    	CHECK(studyingYear > 0)								\
+    	CHECK(studying_year > 0)							\
     	);"
   end
 end

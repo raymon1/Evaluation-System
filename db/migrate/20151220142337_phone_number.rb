@@ -1,11 +1,11 @@
 class PhoneNumber < ActiveRecord::Migration
   def change
   	    execute "CREATE TABLE phone_numbers(				 \
-    	collegeID		INTEGER								,\
+    	college_id		INTEGER								,\
     	phone			VARCHAR(15)		NOT NULL UNIQUE		,\
 
-    	PRIMARY KEY (collegeID,phone)						,\
-    	FOREIGN kEY (collegeID) REFERENCES users(collegeID)  \
+    	PRIMARY KEY (college_id,phone)						,\
+    	FOREIGN kEY (college_id) REFERENCES users(college_id)  \
     	);"
   end
 end
