@@ -75,6 +75,18 @@ Quiz.create(quiz_id: 3)
 Quiz.create(quiz_id: 4)
 Quiz.create(quiz_id: 5)
 
+# courses taken by students
+Student.find(1).courses << Course.find("CSE1")
+Student.find(1).courses << Course.find("CSE2")
+Student.find(1).courses << Course.find("CSE3")
+
+#quizzes of a certain course
+Student.find(1).forms << Form.find(1)
+Student.find(1).forms << Form.find(2)
+Student.find(1).forms << Form.find(3)
+
+
+
 
 
 

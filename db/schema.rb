@@ -36,7 +36,7 @@ ActiveRecord::Schema.define(version: 20151223113100) do
   create_table "enrollins", id: false, force: :cascade do |t|
     t.string  "course_id",  limit: 10, null: false
     t.integer "student_id",            null: false
-    t.string  "semester",   limit: 20, null: false
+    t.string  "semester",   limit: 20
   end
 
   create_table "essay_questions", primary_key: "essay_id", force: :cascade do |t|
