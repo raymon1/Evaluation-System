@@ -16,6 +16,9 @@ Rails.application.routes.draw do
   # root 'welcome#index'
   root 'pages#login'
 
+  get 'student' => 'students#show'
+  get 'course/:code' => 'courses#show'
+  #get 'forms/:form_id' => 'forms#show'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

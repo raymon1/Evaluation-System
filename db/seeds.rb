@@ -6,6 +6,7 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+
 # users
 User.create(college_id: 1,national_id: "1",first_name: "mohamed",middle_name: "ahmed",last_name: "abbas",email: "email1@gmail.com",password: "password1")
 User.create(college_id: 2,national_id: "2",first_name: "raymon",middle_name: "mina",last_name: "youssef",email: "email2@gmail.com",password: "password2")
@@ -84,18 +85,3 @@ Student.find(1).courses << Course.find("CSE3")
 Student.find(1).forms << Form.find(1)
 Student.find(1).forms << Form.find(2)
 Student.find(1).forms << Form.find(3)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -1,5 +1,7 @@
 class FormsController < ApplicationController
   before_action :set_form, only: [:show, :edit, :update, :destroy]
+# before_action :authenticate
+# before_action :student_takes_this_course
 
   # GET /forms
   # GET /forms.json
@@ -10,6 +12,41 @@ class FormsController < ApplicationController
   # GET /forms/1
   # GET /forms/1.json
   def show
+    @form = Form.find_by_form_id(params[:id])
+    questions = Question.where(question_id: @form.form_id)
+    
+    @mcqs = []
+    @numqs = []
+    @essayqs = []
+    @tfs = []
+
+    questions.each do |q|
+      mcq = Mcq.where(mcq_id: q.question_id)
+      if mcq
+          choices = McqChoice.where(mcq_id: mcq.mcq_id)
+          #add needed attributes to their class array
+          @mcqs << MultipleChoice.new(q, choices)
+        next #continue in c is equivalent to next
+      end
+      #et2ked mn esm numericalquestion dih
+      numq = NumericalQuestion.where(numerical_question_id_id: q.question_id)
+      if numq
+          numqs << q
+        next
+      end
+
+      essayq = EssayQuestion.where(essay_id: q.question_id)
+      if essayq
+          @essayqs << q
+        next
+      end
+
+      tf = Tfs.where(tf_id: q.question_id)
+      if tf
+          @tfs << q
+        next
+      end
+    end
   end
 
   # GET /forms/new

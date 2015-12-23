@@ -11,7 +11,7 @@ class PagesController < ApplicationController
     @pass_zeft = params[:password_entered]
 	    if (@role == "student")
 	      sign_in user    
-	    #  redirect_to '/users/index'
+	      redirect_to '/student'
 	    elsif (@role == "instructor")
 	      sign_in user
 	   #   redirect_to '/users/index'  
@@ -22,9 +22,9 @@ class PagesController < ApplicationController
  private
     def find_user (email,password)
       if user = User.find_by_email(email) and user.valid_password?(password)
-      	 if (Student.find_by_studentid(user.collegeid))
+      	 if (Student.find_by_student_id(user.college_id))
       	 	 @role = "student"
-      	 elsif (Instructor.find_by_instructorid(user.collegeid))
+      	 elsif (Instructor.find_by_instructor_id(user.college_id))
       	 	 @role = "instructor"
       	 else
       	 	 @role = "admin"
