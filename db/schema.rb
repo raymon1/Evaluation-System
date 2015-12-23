@@ -126,14 +126,14 @@ ActiveRecord::Schema.define(version: 20151221151457) do
   end
 
   create_table "users", primary_key: "collegeid", force: :cascade do |t|
-    t.date     "dateofbirth"
-    t.string   "gender",                 limit: 7,    default: "male"
+    t.date     "dateofbirth",                                          null: false
+    t.string   "gender",                 limit: 7,    default: "male", null: false
     t.string   "image",                  limit: 1000
     t.string   "nationalid",             limit: 20
-    t.string   "address",                limit: 1000
-    t.string   "firstname",              limit: 30
-    t.string   "middlename",             limit: 30
-    t.string   "lastname",               limit: 30
+    t.string   "address",                limit: 1000,                  null: false
+    t.string   "firstname",              limit: 30,                    null: false
+    t.string   "middlename",             limit: 30,                    null: false
+    t.string   "lastname",               limit: 30,                    null: false
     t.string   "email",                               default: "",     null: false
     t.string   "encrypted_password",                  default: "",     null: false
     t.string   "reset_password_token"
@@ -154,23 +154,4 @@ ActiveRecord::Schema.define(version: 20151221151457) do
   add_foreign_key "answers", "questions", column: "questionid", primary_key: "questionid", name: "answers_questionid_fkey"
   add_foreign_key "answers", "students", column: "studentid", primary_key: "studentid", name: "answers_studentid_fkey"
   add_foreign_key "assignments", "forms", column: "assignmentid", primary_key: "formid", name: "assignments_assignmentid_fkey"
-  add_foreign_key "enrollins", "courses", column: "courseid", primary_key: "code", name: "enrollins_courseid_fkey"
-  add_foreign_key "enrollins", "students", column: "studentid", primary_key: "studentid", name: "enrollins_studentid_fkey"
-  add_foreign_key "essay_questions", "questions", column: "essayid", primary_key: "questionid", name: "essay_questions_essayid_fkey"
-  add_foreign_key "feedbacks", "forms", column: "feedbackid", primary_key: "formid", name: "feedbacks_feedbackid_fkey"
-  add_foreign_key "forms", "courses", column: "courseid", primary_key: "code", name: "forms_courseid_fkey"
-  add_foreign_key "forms", "instructors", column: "instructorid", primary_key: "instructorid", name: "forms_instructorid_fkey"
-  add_foreign_key "instructors", "users", column: "instructorid", primary_key: "collegeid", name: "instructors_instructorid_fkey"
-  add_foreign_key "mcqs", "questions", column: "mcqid", primary_key: "questionid", name: "mcqs_mcqid_fkey"
-  add_foreign_key "numerical_questions", "questions", column: "numericalquestionid", primary_key: "questionid", name: "numerical_questions_numericalquestionid_fkey"
-  add_foreign_key "phone_numbers", "users", column: "collegeid", primary_key: "collegeid", name: "phone_numbers_collegeid_fkey"
-  add_foreign_key "questions", "forms", column: "formid", primary_key: "formid", name: "questions_formid_fkey"
-  add_foreign_key "quizzes", "forms", column: "quizid", primary_key: "formid", name: "quizzes_quizid_fkey"
-  add_foreign_key "sheets", "forms", column: "sheetid", primary_key: "formid", name: "sheets_sheetid_fkey"
-  add_foreign_key "student_take_forms", "forms", column: "formid", primary_key: "formid", name: "student_take_forms_formid_fkey"
-  add_foreign_key "student_take_forms", "students", column: "studentid", primary_key: "studentid", name: "student_take_forms_studentid_fkey"
-  add_foreign_key "students", "users", column: "studentid", primary_key: "collegeid", name: "students_studentid_fkey"
-  add_foreign_key "teaches", "courses", column: "courseid", primary_key: "code", name: "teaches_courseid_fkey"
-  add_foreign_key "teaches", "instructors", column: "instructorid", primary_key: "instructorid", name: "teaches_instructorid_fkey"
-  add_foreign_key "tfs", "questions", column: "tfid", primary_key: "questionid", name: "tfs_tfid_fkey"
 end

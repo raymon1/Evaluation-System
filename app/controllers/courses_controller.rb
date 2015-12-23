@@ -1,6 +1,7 @@
 class CoursesController < ApplicationController
   before_action :set_course, only: [:show, :edit, :update, :destroy]
-
+  #before_action :authenticate ektebha sa7 
+  
   # GET /courses
   # GET /courses.json
   def index
@@ -10,6 +11,20 @@ class CoursesController < ApplicationController
   # GET /courses/1
   # GET /courses/1.json
   def show
+    @course = Course.where(code: params[:code])
+    @forms = Form.where(course_id: @course.code)
+    
+    @quizzes = Hash.new 
+    @feedbacks = Hash.new
+    @sheets = Hash.new
+    @assignments = Hash.new
+
+    @forms.each do |f|
+      @quizzes << Quiz.where(quiz_id: f.form_id)
+      @feedbacks << Feedback.where(feedback_id: f.form_id)
+      @sheets << Sheet.where(sheet_id: f.form_id)
+      @assignments << assignment.where(assignment_id: f.form_id)
+    end
   end
 
   # GET /courses/new
