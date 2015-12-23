@@ -1,8 +1,11 @@
 class CreatePhoneNumbers < ActiveRecord::Migration
   def change
-    create_table :phone_numbers do |t|
+  	    execute "CREATE TABLE phone_numbers(				 \
+    	college_id		INTEGER								,\
+    	phone			VARCHAR(15)		 UNIQUE		,\
 
-      t.timestamps null: false
-    end
+    	PRIMARY KEY (college_id,phone)						,\
+    	FOREIGN kEY (college_id) REFERENCES users(college_id)  \
+    	);"
   end
 end

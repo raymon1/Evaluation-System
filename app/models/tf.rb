@@ -1,2 +1,4 @@
 class Tf < ActiveRecord::Base
+		belongs_to :question
+
 end
