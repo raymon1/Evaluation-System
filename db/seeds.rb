@@ -85,3 +85,38 @@ Student.find(1).courses << Course.find("CSE3")
 Student.find(1).forms << Form.find(1)
 Student.find(1).forms << Form.find(2)
 Student.find(1).forms << Form.find(3)
+
+#question
+Question.create(question_id: 1, form_id: 1, question: "Are you a rabbit?", mark: 2)
+Question.create(question_id: 2, form_id: 1, question: "Are you a human?", mark: 2)
+Question.create(question_id: 3, form_id: 1, question: "How many is 1+1?", mark: 2)
+Question.create(question_id: 4, form_id: 1, question: "How many fingers do you have?", mark: 2)
+Question.create(question_id: 5, form_id: 1, question: "What is the first computer name?", mark: 2)
+Question.create(question_id: 6, form_id: 1, question: "Who is the first one to set foot on moon?", mark: 2)
+Question.create(question_id: 7, form_id: 1, question: "Explain why water boils", mark: 2)
+Question.create(question_id: 8, form_id: 1, question: "How are you doing?", mark: 2)
+
+#numerical
+NumericalQuestion.create(numerical_question_id: 3, answer: 2)
+NumericalQuestion.create(numerical_question_id: 4, answer: 10)
+
+#MCQS
+Mcq.create(mcq_id: 5, answer: "ENIAC")
+Mcq.create(mcq_id: 6, answer: "Neil Armstrong")
+
+#mcqs choicees
+McqChoice.create(question_id: 5, mcq_id: 1, choice: "Sakhr")
+McqChoice.create(question_id: 5, mcq_id: 2, choice: "ENIAC")
+McqChoice.create(question_id: 5, mcq_id: 3, choice: "Microsft")
+McqChoice.create(question_id: 5, mcq_id: 4, choice: "other")
+McqChoice.create(question_id: 6, mcq_id: 5, choice: "Lucy")
+McqChoice.create(question_id: 6, mcq_id: 6, choice: "Lucky")
+McqChoice.create(question_id: 6, mcq_id: 7, choice: "Neil Armstrong")
+
+#tfs
+Tf.create(tf_id: 1, answer: false)
+Tf.create(tf_id: 2, answer: true)
+
+#essay
+EssayQuestion.create(essay_id: 7, answer: "surface presssure is lower than atmospheric pressure")
+EssayQuestion.create(essay_id: 8, answer: "I'm fine")
