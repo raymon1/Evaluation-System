@@ -21,7 +21,7 @@ class FormsController < ApplicationController
     @tfs = []
 
     questions.each do |q|
-      mcq = Mcq.where(mcq_id: q.question_id)
+      mcq = Mcq.find_by_mcq_id(q.question_id)
       if mcq
           choices = McqChoice.where(mcq_id: mcq.mcq_id)
           #add needed attributes to their class array
@@ -29,19 +29,19 @@ class FormsController < ApplicationController
         next #continue in c is equivalent to next
       end
       #et2ked mn esm numericalquestion dih
-      numq = NumericalQuestion.where(numerical_question_id_id: q.question_id)
+      numq = NumericalQuestion.find_by_numerical_question_id(q.question_id)
       if numq
           numqs << q
         next
       end
 
-      essayq = EssayQuestion.where(essay_id: q.question_id)
+      essayq = EssayQuestion.find_by_essay_id(q.question_id)
       if essayq
           @essayqs << q
         next
       end
 
-      tf = Tfs.where(tf_id: q.question_id)
+      tf = Tf.find_by_tf_id(q.question_id)
       if tf
           @tfs << q
         next
