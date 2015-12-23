@@ -1,10 +1,9 @@
 Rails.application.routes.draw do
+
   root 'pages#login'
 
-
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
-  post 'pages/home' => 'pages#home'
-
+ 
   devise_for :users
 
   resources :questions
@@ -19,6 +18,8 @@ Rails.application.routes.draw do
 
   get 'student' => 'students#show'
   get 'course/:code' => 'courses#show'
+  get 'instructor/home' => 'instructors#home'
+  post 'pages/home' => 'pages#home'
   #get 'forms/:form_id' => 'forms#show'
 
   # Example of regular route:
