@@ -15,7 +15,7 @@
 					<ul class="nav navbar-nav">
 					<!-- name of user-->
 					    <li >
-							<a ><%= @name%></a>
+							<a><%=@name%></a>
 						</li>
 						<!-- -->
 						<li class="active">
@@ -97,16 +97,18 @@
 		                         <h3>Courses</h3>
 		                     </div>
 							 <!-- mfrood  el thumbnail ytkrar 3l 7sb 3dd el course --> 
-							 <form>
+							 <form >
 							    <div class="row">
 							    	<% @courses.each do|c| %>
 								   <div class="col-sm-6 col-md-4">
 								      <div class="thumbnail"> 
 									      <img src="<%= asset_path 'folder.png'%>"alt="...">
 										     <div class="caption" align="center">
-												 <div class="btn-group">
-												     <button type="button" class="btn btn-primary" align="center"><%=c[:name]%></button>
-												     <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+										        <div class="btn-group">
+												     <button type="button" class="btn btn-primary" align="center" onclick="window.open('/course/<%=c.code%>')"><%=c.name%></button>
+											
+									    
+										<!--		     <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 												         <span class="caret"></span>
 												         <span class="sr-only">Toggle Dropdown</span>
 												     </button>
@@ -115,7 +117,7 @@
 												         <li><a href="#" onclick="window.open('QuizView.html')">Feedbacks</a></li>
 												         <li><a href="#" onclick="window.open('QuizView.html')">Sheets</a></li>
 												         <li><a href="#" onclick="window.open('QuizView.html')">Quizzes</a></li>
-												      </ul>
+												      </ul> -->
 												  </div>
 											 </div>
 									   </div>

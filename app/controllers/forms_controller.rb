@@ -12,7 +12,7 @@ class FormsController < ApplicationController
   # GET /forms/1
   # GET /forms/1.json
   def show
-    @form = Form.where(form_id: params[:form_id])
+    @form = Form.find_by_form_id(params[:id])
     questions = Question.where(question_id: @form.form_id)
     
     @mcqs = []
@@ -25,7 +25,7 @@ class FormsController < ApplicationController
       if mcq
           choices = McqChoice.where(mcq_id: mcq.mcq_id)
           #add needed attributes to their class array
-          # @mcqs << MultipleChoice.new(q, choices)
+          @mcqs << MultipleChoice.new(q, choices)
         next #continue in c is equivalent to next
       end
       #et2ked mn esm numericalquestion dih
@@ -46,7 +46,7 @@ class FormsController < ApplicationController
           @tfs << q
         next
       end
-
+    end
   end
 
   # GET /forms/new

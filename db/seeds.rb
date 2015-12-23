@@ -85,19 +85,3 @@ Student.find(1).courses << Course.find("CSE3")
 Student.find(1).forms << Form.find(1)
 Student.find(1).forms << Form.find(2)
 Student.find(1).forms << Form.find(3)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
->>>>>>> dd28a4ee3313904179d50fad9870e9348b87f301
-

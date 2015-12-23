@@ -11,20 +11,46 @@ class CoursesController < ApplicationController
   # GET /courses/1
   # GET /courses/1.json
   def show
-    @course = Course.where(code: params[:code])
+    @course = set_course
     @forms = Form.where(course_id: @course.code)
     
-    @quizzes = Hash.new 
-    @feedbacks = Hash.new
-    @sheets = Hash.new
-    @assignments = Hash.new
+    @quizzes = []
+    @feedbacks = []
+    @sheets = []
+    @assignments = []
 
     @forms.each do |f|
-      @quizzes << Quiz.where(quiz_id: f.form_id)
-      @feedbacks << Feedback.where(feedback_id: f.form_id)
-      @sheets << Sheet.where(sheet_id: f.form_id)
-      @assignments << assignment.where(assignment_id: f.form_id)
+      q = Quiz.find_by_quiz_id(f.form_id)
+      if q
+        @quizzes << q
+        next
+      end
+      f = Feedback.find_by_feedback_id(f.form_id)
+      if f 
+        @feedbacks << f
+        next
+      end
+      s = Sheet.find_by_sheet_id(f.form_id)
+      if s 
+        @sheets << s
+        next
+      end
+      a = Assignment.find_by_assignment_id(f.form_id)
+      if a
+        @assignments << a
+        next
+      end
     end
+
+    puts "heerrrrreeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee"
+    puts @quizzes
+    puts "qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq"
+    puts @feedbacks
+    puts "ffffffffffffffffffffffffffffffffffff"
+    puts @sheets
+    puts "ssssssssssssssssssssssssssssssssssss"
+    puts @assignments
+    puts "byeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee"
   end
 
   # GET /courses/new
@@ -79,7 +105,7 @@ class CoursesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_course
-      @course = Course.find(params[:id])
+      @course = Course.find(params[:code])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

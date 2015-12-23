@@ -46,18 +46,19 @@
  			</nav>
  			<div class="page-header">
  				<h1>
- 					Welcome ! <small>Enjoy Your stay and take it easy on the Kids</small>
+ 					Welcome ! <small>Enjoy</small>
  				</h1>
  			</div>
  		</div>
  		<div class="row">
  			<div class="col-md-6">
  				<h3>
- 					Quiz
+ 					Quizzes
  				</h3>
  				<ul class="list-group">
  					<% @quizzes.each do |q| %>
- 					<li class="list-group-item"><%= link_to "Quiz " + q.quiz_id, "/forms/q.quiz_id" , method: "get" %>
+ 					<li class="list-group-item"><%= link_to "Quiz #{q.quiz_id}", 
+ 					form_path(q) , method: "get" %></li>
  						<%end%>
  					</ul>
 					<!-- <button type="button" class="btn btn-success btn-default">
@@ -66,11 +67,11 @@
 			</div>
 			<div class="col-md-6">
 				<h3>
-					Assignement
+					Assignements
 				</h3>
 				<ul class="list-group">
 					<% @assignments.each do |a| %>
-					<li class="list-group-item"><%= link_to "Assignment <%= a.assignment_id%>", "/forms/a.assignment_id" , method: "get" %>
+					<li class="list-group-item"><%= link_to "Assignment #{a.assignment_id}", form_path(a) , method: "get" %></li>
 					<%end%>
 				</ul>
 			</div>
@@ -78,11 +79,11 @@
 		<div class="row">
 			<div class="col-md-6">
 				<h3>
-					Sheet
+					Sheets
 				</h3>
 				<ul class="list-group">
 					<% @sheets.each do |s| %>
-						<li class="list-group-item"><%= link_to "Sheet <%= s.sheet_id%>", "/forms/s.sheet_id" , method: "get" %>
+						<li class="list-group-item"><%= link_to "Sheet #{s.sheet_id}", form_path(s) , method: "get" %></li>
 					<%end%>
 				</ul>
 					<!-- <button type="button" class="btn btn-success btn-default">
@@ -91,12 +92,13 @@
 			</div>
 		<div class="col-md-6">
 			<h3>
-				Feedback
+				Feedbacks
 			</h3>
 			<ul class="list-group">
-				<% @Feedback.each do |q| %>
-					<li class="list-group-item"><%= link_to "Feedback <%= s.sheet_id%>", "/forms/s.sheet_id" , method: "get" %>
+				<% @feedbacks.each do |f| %>
+					<li class="list-group-item"><%= link_to "Feedback #{f.feedback_id}", form_path(f) , method: "get" %></li>
 				<%end%>
+				
 			</ul>
 					<!-- <button type="button" class="btn btn-success btn-default">
 						Create Feedback Form
