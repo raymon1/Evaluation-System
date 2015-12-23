@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
+  root 'pages#login'
 
 
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   post 'pages/home' => 'pages#home'
 
   devise_for :users
@@ -14,7 +16,6 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
-  root 'pages#login'
 
   get 'student' => 'students#show'
   get 'course/:code' => 'courses#show'
