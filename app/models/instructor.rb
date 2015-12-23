@@ -5,7 +5,7 @@ class Instructor < ActiveRecord::Base
 
 	has_many :forms
 
-	belongs_to :user
+	has_one :user, foreign_key: "college_id"
 
 
 end

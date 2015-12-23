@@ -9,7 +9,7 @@ class Student < ActiveRecord::Base
 	has_many :student_take_forms
 	has_many :forms, through: :student_take_forms
 
-	belongs_to :user
+	has_one :user , foreign_key: "college_id"
 
 
 end

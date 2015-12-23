@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151221151457) do
+ActiveRecord::Schema.define(version: 20151223113100) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -59,8 +59,9 @@ ActiveRecord::Schema.define(version: 20151221151457) do
     t.string "major", limit: 100
   end
 
-  create_table "mcq_choices", primary_key: "mcq_id", force: :cascade do |t|
-    t.text "choice"
+  create_table "mcq_choices", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "mcqs", primary_key: "mcq_id", force: :cascade do |t|
