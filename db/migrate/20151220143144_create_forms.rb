@@ -1,16 +1,16 @@
 class CreateForms < ActiveRecord::Migration
   def change
-   	    execute "CREATE TABLE forms(										 \
-   	    formID			INTEGER												,\
-    	courseID		VARCHAR(10)												,\
-    	instructorID	INTEGER					   							,\
-    	title			VARCHAR(100)										,\
-    	no0fQuestions	INTEGER												,\
-    	timeAndDate		TIMESTAMP											,\
-    	PRIMARY KEY (formID)												,\
-    	FOREIGN kEY (instructorID) REFERENCES instructors(instructorID) 	,\
-    	FOREIGN kEY (courseID) REFERENCES courses(code) 		 			,\
-    	CHECK(no0fQuestions > 0)											 \
+   	  execute "CREATE TABLE forms(										          \
+   	  form_id			              INTEGER												,\
+    	course_id		            VARCHAR(10)												           ,\
+    	instructor_id	         INTEGER					   							           ,\
+    	title			               VARCHAR(100)										               ,\
+    	no_of_questions	       INTEGER												            ,\
+    	creation_time_date		   TIMESTAMP										      	,\
+    	PRIMARY KEY (form_id)												           ,\
+    	FOREIGN kEY (instructor_id) REFERENCES instructors(instructor_id) 	,\
+    	FOREIGN kEY (course_id) REFERENCES courses(code) 		 			,\
+    	CHECK(no_of_questions > 0)											 \
     	);"
   end
 end

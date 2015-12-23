@@ -1,10 +1,10 @@
 class CreateMcqs < ActiveRecord::Migration
   def change
         execute "CREATE TABLE mcqs(										 	\
-   	    mcqID				INTEGER											,\
+   	    mcq_id				INTEGER											,\
    	    answer				TEXT											,\
-    	PRIMARY KEY (mcqID)													,\
-    	FOREIGN kEY (mcqID) REFERENCES questions(questionID) 				\
+    	PRIMARY KEY (mcq_id)													,\
+    	FOREIGN kEY (mcq_id) REFERENCES questions(question_id) 				\
     	);"
   end
 end

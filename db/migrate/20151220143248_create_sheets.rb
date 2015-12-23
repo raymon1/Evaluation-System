@@ -1,10 +1,10 @@
 class CreateSheets < ActiveRecord::Migration
   def change
         execute "CREATE TABLE sheets(										 \
-   	    sheetID			INTEGER												,\
-    	sheetNo			INTEGER												,\
-    	PRIMARY KEY (sheetID)												,\
-    	FOREIGN kEY (sheetID) REFERENCES forms(formID) 						\
+   	    sheet_id			INTEGER												,\
+    	sheet_number		INTEGER												,\
+    	PRIMARY KEY (sheet_id)												,\
+    	FOREIGN kEY (sheet_id) REFERENCES forms(form_id) 						\
     	);"
   end
 end

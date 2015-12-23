@@ -1,13 +1,13 @@
 class CreateQuizzes < ActiveRecord::Migration
   def change
       	execute "CREATE TABLE quizzes(										 \
-   	    quizID			INTEGER												,\
+   	    quiz_id			INTEGER												,\
     	duration		REAL												,\
-    	quizMark		REAL					   							,\
-    	avgMark			REAL												,\
-    	publishDate		TIMESTAMP											,\
-    	PRIMARY KEY (quizID)												,\
-    	FOREIGN kEY (quizID) REFERENCES forms(formID) 						\
+    	quiz_mark		REAL					   							,\
+    	avg_mark			REAL												,\
+    	publish_date		TIMESTAMP											,\
+    	PRIMARY KEY (quiz_id)												,\
+    	FOREIGN kEY (quiz_id) REFERENCES forms(form_id) 						\
     	);"
   end
 end

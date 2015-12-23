@@ -1,17 +1,17 @@
 class CreateUsers < ActiveRecord::Migration
   def change
     execute "CREATE TABLE users( 									 \
-    	collegeID		INTEGER										,\
-    	dateOfBirth		DATE 				         				,\
+    	college_id		INTEGER										,\
+    	date_of_birth		DATE 				         				,\
     	gender			VARCHAR(7)		           DEFAULT 'male'	,\
     	image			VARCHAR(1000)								,\
-    	nationalID		VARCHAR(20)			UNIQUE					,\
+    	national_id		VARCHAR(20)			UNIQUE					,\
     	address			VARCHAR(1000)		          				,\
-    	firstName		VARCHAR(30)			          				,\
-    	middleName		VARCHAR(30)			         				,\
-    	lastName		VARCHAR(30)			           		 		,\
-    	PRIMARY KEY(collegeID)										,\
-    	CHECK (collegeID > 0)										 \
+    	first_name		VARCHAR(30)			          				,\
+    	middle_name		VARCHAR(30)			         				,\
+    	last_name		VARCHAR(30)			           		 		,\
+    	PRIMARY KEY(college_id)										,\
+    	CHECK (college_id > 0)										 \
     	);"
   end
 end
