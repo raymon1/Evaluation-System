@@ -1,23 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Bootstrap 3, from LayoutIt!</title>
-
-    <meta name="description" content="Source code generated using layoutit.com">
-    <meta name="author" content="LayoutIt!">
-
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
-	<link href="css/extension.css" rel="stylesheet">
-
-  </head>
-  <body>
-
-    <div class="container-fluid">
+   <div class="container-fluid">
 	<div class="row">
 		<div class="col-md-12">
 			<nav class="navbar navbar-default" role="navigation">
@@ -31,7 +13,7 @@
 
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav">
-						
+
 					</ul>
 				
 					<ul class="nav navbar-nav navbar-right">
@@ -68,7 +50,7 @@
 			</nav>
 			<div class="page-header">
 				<h1>
-					Welcome ! <small>Enjoy Your stay and take it easy on the Kids</small>
+					Welcome <%= current_user.first_name %> ! <small>Enjoy Your stay and take it easy on the Kids</small>
 				</h1>
 			</div>
 			<div class="row">
@@ -204,14 +186,6 @@
 					</button>
 			</div>
 			</div> -->
-			</div>
 		</div>
 	</div>
-  
 </div>
-
-    <script src="js/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/scripts.js"></script>
-  </body>
-</html>
