@@ -7,8 +7,8 @@ class User < ActiveRecord::Base
 
   has_many :phone_numbers
 
-  belongs_to :admins
-  belongs_to :students
-  belongs_to :instructors
+  belongs_to :admin
+  belongs_to :student
+  belongs_to :instructor
 
 end
