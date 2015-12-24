@@ -19,13 +19,13 @@ User.create(college_id: 8,national_id: "8",first_name: "nada",middle_name: "awad
 User.create(college_id: 9,national_id: "9",first_name: "nada",middle_name: "mokhtar",last_name: "mohamed",email: "email9@gmail.com",password: "password9")
 User.create(college_id: 10,national_id: "10",first_name: "nourhan",middle_name: "zakaria",last_name: "mohamed",email: "email10@gmail.com",password: "password10")
 
-User.create(college_id: 11,national_id: "11",first_name: "bassem",middle_name: "mohamed",last_name: "mohamed",email: "email110@gmail.com",password: "password11")
-User.create(college_id: 12,national_id: "12",first_name: "sahar",middle_name: "mohamed",last_name: "mohamed",email: "email120@gmail.com",password: "password12")
-User.create(college_id: 13,national_id: "13",first_name: "eslam",middle_name: "mohamed",last_name: "mohamed",email: "email130@gmail.com",password: "password13")
+User.create(college_id: 11,national_id: "11",first_name: "bassem",middle_name: "mohamed",last_name: "mohamed",email: "email11@gmail.com",password: "password11")
+User.create(college_id: 12,national_id: "12",first_name: "sahar",middle_name: "mohamed",last_name: "mohamed",email: "email12@gmail.com",password: "password12")
+User.create(college_id: 13,national_id: "13",first_name: "eslam",middle_name: "mohamed",last_name: "mohamed",email: "email13@gmail.com",password: "password13")
 User.create(college_id: 14,national_id: "14",first_name: "amr",middle_name: "mohamed",last_name: "mohamed",email: "email14@gmail.com",password: "password14")
-User.create(college_id: 15,national_id: "15",first_name: "mona",middle_name: "mohamed",last_name: "mohamed",email: "email150@gmail.com",password: "password15")
-User.create(college_id: 16,national_id: "16",first_name: "admin",middle_name: "admin",last_name: "admin",email: "email160@gmail.com",password: "password16")
-User.create(college_id: 17,national_id: "17",first_name: "admin",middle_name: "admin",last_name: "admin",email: "email170@gmail.com",password: "password17")
+User.create(college_id: 15,national_id: "15",first_name: "mona",middle_name: "mohamed",last_name: "mohamed",email: "email15@gmail.com",password: "password15")
+User.create(college_id: 16,national_id: "16",first_name: "admin",middle_name: "admin",last_name: "admin",email: "email16@gmail.com",password: "password16")
+User.create(college_id: 17,national_id: "17",first_name: "admin",middle_name: "admin",last_name: "admin",email: "email17@gmail.com",password: "password17")
 
 
 #students
