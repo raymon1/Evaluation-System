@@ -1,270 +1,305 @@
-  <div class="container-fluid" style="background:#aaa">
-	<div class="row">
-		<div class="col-md-12">
-			<nav class="navbar navbar-default" role="navigation" style="background:white">
-				<div class="navbar-header">
-					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-						 <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
-					</button> <a class="navbar-brand" href="#">
-					<div align="center">
-        <img alt="" src="Capture.PNG">
-		</div>
-      </a>
-				</div>
-				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-					<ul class="nav navbar-nav">
-						<li class="active">
-							<a href="#">Home</a>
-						</li>
-						<li>
-							<a href="#">About</a>
-						</li>
-						<li>
-							<a href="#">Contact</a>
-						</li>
-						
-					</ul>
-					<form class="navbar-form navbar-left" role="search">
-						<div class="form-group">
-							<input type="text" class="form-control">
-						</div>
-						<button type="submit" class="btn btn-default">
-							Search
-						</button>
-					</form>
-					<ul class="nav navbar-nav navbar-right">
-						
-						<li class="dropdown">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown">Settings<strong class="caret"></strong></a>
-							<ul class="dropdown-menu">
-								<li>
-									<a href="#">Privacy</a>
-								</li>
-								<li>
-									<a href="#">Another action</a>
-								</li>
-								<li>
-									<a href="#">Something else here</a>
-								</li>
-								<li class="divider">
-								</li>
-								<li>
-									<a href="#">Sign Out</a>
-								</li>
-							</ul>
-						</li>
-					</ul>
-				</div>
-			</nav>
-		</div>
-	</div>
-	<div class="row">
+<!-- navigation bar --> 
 	<!-- ------------------------------------------------------------------>
-		<div class="col-md-8">
-		     <div class="panel panel-default">
-                 <div class="panel-body">
-                     <div class="page-header">
-                         <h3> <%= @form.title%></h3>
-                     </div>
-					 <form>
-					 <!-- for loop according to number of questions from here -->
-					 <% if @tfs.size>0 %>
+	<div class="col-md-8">
+	    <div class="panel panel-default">
+            <div class="panel-body">
+                <div class="page-header">
+                    <h3> <%= @form.title%></h3>
+                </div>
+				<form>
+				 <!-- for loop according to number of questions from here -->
+					<% if @tfs.size>0 %>
 					    <div class="form-group" > 
-                             <label class="text-inline" id="NewQuestion">True or False </label>
-							 <!--	 appeared if bouns-->						 <% @tfs.each do |q| %>
+					    	<h4>True or False</h4> 
+							 <!--	 appeared if bouns-->	
+							<% @tfs.each do |q| %>
 							 	<% if q.bonus %> 
-							 		<label class="text-inline" id="NewQuestion"> <span class="glyphicon glyphicon-asterisk" aria-hidden="true"></span>Bonus</label>		
-							 	<%end%>							 
-							 <!-- -->
+									<label class="text-inline" id="NewQuestion"> <span class="glyphicon glyphicon-asterisk" aria-hidden="true"></span>Bonus</label>		
+								<%end%>							 
+								<!-- -->
+								<label class="text" >
+									 	<%=q.question%>
+									 </label>
+									 <br></br>
+								                 <label for="NewAnswer">Answer</label>
+								<div class="radio">
+								     <label class="radio-inline">
+								         <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"> True
+								     </label>
+									 <label class="radio-inline">
+									     <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"> False
+									 </label>
+								</div>
+						   <!-- <div class="text">
+						     <a href="#" class="">
+							 <div class="caption" >
+							  <h4 class="" onClick="window.open('ViewForm1.html')">Hint 
+							  <!-- displayed if is checked 
 								 <label class="text-inline" >
-									<p><%q.question%></p> 
-								</label>
-							 
-                             <label for="NewAnswer">Answer</label>
-							 <div class="radio">
-							     <label class="radio-inline">
-							         <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"> True
-							     </label>
-								 <label class="radio-inline">
-								     <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"> False
+								 <input type="text" class="form-control" placeholder="Disabled input here..." disabled id="QhintMark">
 								 </label>
-								 </div>
-					   </div>
-					   
-					   <!-- <div class="text">
-					     <a href="#" class="">
-						 <div class="caption" >
-						  <h4 class="" onClick="window.open('ViewForm1.html')">Hint 
-						  <!-- displayed if is checked -->
-							 <label class="text-inline" >
-							 <input type="text" class="form-control" placeholder="Disabled input here..." disabled id="QhintMark">
-							 </label>
-							 
-							 <!-- 
-						  </h4>
-						  
-                          </div>
-						  </a>
-							 
-					   </div>
-					   <label class="text" >
-							 <input type="text" class="form-control" placeholder="Disabled input here..." disabled id="Qhint">
-							 </label>
-					   <div class="text">
-					     <a href="#" class="">
-						 <div class="caption" >
-						  <h4 class="" onClick="window.open('ViewForm1.html')">Explanation</h4>
-                          </div>
-						  </a>
-					   </div>
-					   <label class="text" >
-							 <input type="text" class="form-control" placeholder="Disabled input here..." disabled id="Qexplanation">
-							 </label>
-					   				
+								 
+								 <!-- 
+							  </h4>
+							  
+	                          </div>
+							  </a>
+								 
+						   </div>
+						   <label class="text" >
+								 <input type="text" class="form-control" placeholder="Disabled input here..." disabled id="Qhint">
+								 </label>
+						   <div class="text">
+						     <a href="#" class="">
+							 <div class="caption" >
+							  <h4 class="" onClick="window.open('ViewForm1.html')">Explanation</h4>
+	                          </div>
+							  </a>
+						   </div>
+						   <label class="text" >
+								 <input type="text" class="form-control" placeholder="Disabled input here..." disabled id="Qexplanation">
+								 </label>
+						   				
 
-					   <!-- till here -->
-					   <%end%>
-					   <%end%>
+						   <!-- till here -->
+						   		<p><br></p>
+						    <%end%>
+					    </div>
+				    <%end%>
 
- <form>
-							 <!-- for loop according to number of questions from here -->
-							 <% if @mcqs.size >0 %>
-                               <div class="form-group" > 
-                                     <label class="text-inline" id="NewQuestion">MCQ </label>
+				    <!----------------------------------------------------------------- -->
 
-                                     <% @mcqs.each do |q|%>
-									 <!--	 appeared if bouns-->					 
-									 <% if q.question.bonus %> 
-							 			<label class="text-inline" id="NewQuestion"> <span class="glyphicon glyphicon-asterisk" aria-hidden="true"></span>Bonus</label>		
-							 		<%end%>									 
+				    <% if @mcqs.size >0 %>
+                        <div class="form-group" > 
+							<h4>MCQ</h4>
+                            <% @mcqs.each do |q|%>
+								<!--	 appeared if bouns-->					 
+								<% if q.question.bonus %> 
+									<label class="text-inline" id="NewQuestion"> <span class="glyphicon glyphicon-asterisk" aria-hidden="true"></span>Bonus</label>		
+								<%end%>									 
 									 <!-- -->
-									 <label class="text-inline" >
-									 	<p><%=q.question.question%>
-									 </label>
-                               </div>
-                               <div class="form-group">
-                                     <label for="NewAnswer">Answer</label>
-                                     <% q.choices.each do |c| %>
-									 <div class="radio">
-									     <label class="radio-inline">
-									         <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"> <%=c.choice%>
-									     </label>
-									 </div>
-									 <%end%>
-									 </label>
-									 </div>
-									<%end%> 
+								<label class="text" >
+								 	<%=q.question.question%>
+								</label>
+								<br></br>
+                   		        <label for="NewAnswer">Answer</label>
+                                	<% q.choices.each do |c| %>
+										<div class="radio">
+									    	<label class="radio">
+									   	 		<input type="radio" name="inlineRadioOptions" id="Radio1" value="option1"> <%=c.choice%>
+										    </label>
+										</div>
+									<%end%>
+								</label>
+							<%end%>
+						</div>
+					<%end%> 
 														   
-							<!--   <div class="text">
-							     <a href="#" class="">
-								 <div class="caption" >
-								  <h4 class="" onClick="window.open('ViewForm1.html')">Hint 
-								  <!-- displayed if is checked 
-									 <label class="text-inline" >
-									 <input type="text" class="form-control" placeholder="Disabled input here..." disabled id="QhintMark">
-									 </label>
-									 
-									 <!-- 
-								  </h4>
+<!-- ----------------------------------------------------------------------------------- -->
+ <!-- for loop according to number of questions from here -->
+ 					<% if @essayqs.size > 0 %>
+ 						<div class="form-group">
+                            <label class="text-inline" id="NewQuestion">Essay Questions </label>
+                            <br><br>
+							<!--	 appeared if bouns-->
+							<% @essayqs.each do |q| %>
+							 	<% if q.bonus %>						 
+							 		<label class="text-inline" id="NewQuestion"> <span class="glyphicon glyphicon-asterisk" aria-hidden="true"></span>Bonus</label>	
+								<%end%>
+
+								<label class="text" >
+								 	<%=q.question%>
+								 </label>
+								 <br>
+								 <!-- 
+								 <label class="text-inline" >
+								 <input type="text" class="form-control" placeholder="Disabled input here..." disabled id="QMark">
+								 </label>
+								 
+								 
+								 <textarea class="form-control" rows="3" placeholder="Disabled input here..." disabled></textarea>
+                           </div>
+                           <div class="form-group"> -->
+                                 <label for="NewAnswer">Answer</label>
+								 <textarea class="form-control" rows="3" placeholder="Your Answer..."></textarea>
+					 <!--	   </div>
+						  
+						   <div class="text">
+						     <a href="#" class="">
+							 <div class="caption" >
+							  <h4 class="" onClick="window.open('ViewForm1.html')">Hint 
+							  <!-- displayed if is checked 
+								 <label class="text-inline" >
+								 <input type="text-inline" class="form-control" placeholder="Disabled input here..." disabled id="QhintMark">
+								 </label>
+								 
 								  
-                                  </div>
-								  </a>
-									 
-							   </div>
-							   <label class="text" >
-									 <input type="text" class="form-control" placeholder="Disabled input here..." disabled id="Qhint">
-									 </label>
-							   <div class="text">
-							     <a href="#" class="">
-								 <div class="caption" >
-								  <h4 class="" onClick="window.open('ViewForm1.html')">Explanation</h4>
-                                  </div>
-								  </a>
-							   </div>
-							   <label class="text" >
-									 <input type="text" class="form-control" placeholder="Disabled input here..." disabled id="Qexplanation">
-									 </label>
-							   
-							   <!-- till here -->
-   							   </div>
-							   <%end%>
+							  </h4>
+							  
+                              </div>
+							  </a>
+								 
+						   </div>
+						   <label class="text" >
+								 <input type="text" class="form-control" placeholder="Disabled input here..." disabled id="Qhint">
+								 </label>
+						   <div class="text">
+						     <a href="#" class="">
+							 <div class="caption" >
+							  <h4 class="" onClick="window.open('ViewForm1.html')">Explanation</h4>
+                              </div>
+							  </a>
+						   </div>
+						   <label class="text" >
+								 <input type="text" class="form-control" placeholder="Disabled input here..." disabled id="Qexplanation">
+								 </label>
+						   
+						   <!-- till here -->
+						   		<br><br>
+						   	<%end%>
+						</div>
+					<%end%>   
 
 
+<!-- ------------------------------------------------------------------------------------ -->
 
+					<% if @essayqs.size > 0 %>
+ 						<div class="form-group">
+                            <label class="text-inline" id="NewQuestion">Calculate </label>
+                            <br><br>
+							<!--	 appeared if bouns-->
+							<% @numqs.each do |q| %>
+							 	<% if q.bonus %>						 
+							 		<label class="text-inline" id="NewQuestion"> <span class="glyphicon glyphicon-asterisk" aria-hidden="true"></span>Bonus</label>	
+								<%end%>
+
+								<label class="text" >
+								 	<%=q.question%>
+								 </label>
+								 <br>
+								 <!-- 
+								 <label class="text-inline" >
+								 <input type="text" class="form-control" placeholder="Disabled input here..." disabled id="QMark">
+								 </label>
+								 
+								 
+								 <textarea class="form-control" rows="3" placeholder="Disabled input here..." disabled></textarea>
+                           </div>
+                           <div class="form-group"> -->
+                                 <label for="NewAnswer">Answer</label>
+								 <textarea class="form-control" rows="3" placeholder="Your Answer..."></textarea>
+					 <!--	   </div>
+						  
+						   <div class="text">
+						     <a href="#" class="">
+							 <div class="caption" >
+							  <h4 class="" onClick="window.open('ViewForm1.html')">Hint 
+							  <!-- displayed if is checked 
+								 <label class="text-inline" >
+								 <input type="text-inline" class="form-control" placeholder="Disabled input here..." disabled id="QhintMark">
+								 </label>
+								 
+								  
+							  </h4>
+							  
+                              </div>
+							  </a>
+								 
+						   </div>
+						   <label class="text" >
+								 <input type="text" class="form-control" placeholder="Disabled input here..." disabled id="Qhint">
+								 </label>
+						   <div class="text">
+						     <a href="#" class="">
+							 <div class="caption" >
+							  <h4 class="" onClick="window.open('ViewForm1.html')">Explanation</h4>
+                              </div>
+							  </a>
+						   </div>
+						   <label class="text" >
+								 <input type="text" class="form-control" placeholder="Disabled input here..." disabled id="Qexplanation">
+								 </label>
+						   
+						   <!-- till here -->
+						   		<br><br>
+						   	<%end%>
+						</div>
+					<%end%>   
 
 					   <div align="right">
                       <button type="submit"  class="btn btn-primary" > Submit</button>
 					 </div>
 
-                             <p><br/></p>
-                     </form>
-                 </div>
-     </div>
-</div>
+
+
+			    </form>
+			</div>
+		</div>
+	</div>
+ <form>
+							 <!-- for loop according to number of questions from here -->
+						
+
+
+
+
 <div class="col-md-4">
     <div class="panel panel-default">
-                 <div class="panel-body">
-                     <div class="page-header">
-                         <h3>Quiz Info</h3>
-                     </div>
+    	<div class="panel-body">
+            <div class="page-header">
+                <h3>Quiz Info</h3>
+            </div>
 					 
-					 <form>
-					 <div class="form-group" > 
-                             <label for="NewQuestion">Title</label>
-							 <div class="input-group">
-                                 <span class="input-group-addon" id="basic-addon1">
-								  <span class="glyphicon glyphicon-pencil"></span>
-								 
-								 </span>
-								 <input type="text" class="form-control" id="QuizTitle" placeholder="Disabled input here..." disabled>
-                             </div>
-                       </div>
-                       <div class="form-group">
-                             <label for="NewAnswer">Date</label>
-							 <div class="input-group date" id="datetimepicker1">
-							
-                                 <span class="input-group-addon" id="basic-addon2">
-								 <span class="glyphicon glyphicon-calendar"></span>
-								 </span>
-								 <input type="text" class="form-control" id="QuizDate" placeholder="Disabled input here..." disabled>
+			<form>
+				<div class="form-group" > 
+                    <label for="NewQuestion">Title</label>
+					<div class="input-group">
+                    	<span class="input-group-addon" id="basic-addon1">
+							<span class="glyphicon glyphicon-pencil"></span>
+						</span>
+						<input type="text" class="form-control" id="QuizTitle" placeholder="Disabled input here..." disabled>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="NewAnswer">Date</label>
+					<div class="input-group date" id="datetimepicker1">
+					    <span class="input-group-addon" id="basic-addon2">
+						<span class="glyphicon glyphicon-calendar"></span>
+						</span>
+						<input type="text" class="form-control" id="QuizDate" placeholder="Disabled input here..." disabled>
+                    </div> 
+				</div>
+				<div class="form-group">
+                    <label for="NewAnswer">Time to be Published</label>
+					<div class="input-group date" id="datetimepicker2">
+                        <span class="input-group-addon" id="basic-addon3">
+							<span class="glyphicon glyphicon-time"></span>
+						</span>
+						<input type="text" class="form-control" id="QuizTime" placeholder="Disabled input here..." disabled
                              </div> 
-					   </div>
-					   <div class="form-group">
-                             <label for="NewAnswer">Time to be Published</label>
-							 <div class="input-group date" id="datetimepicker2">
-                                 <span class="input-group-addon" id="basic-addon3">
-								 <span class="glyphicon glyphicon-time"></span>
-
-								 </span>
-								 <input type="text" class="form-control" id="QuizTime" placeholder="Disabled input here..." disabled
-                             </div> 
-					   </div>
+					</div>
 					   
-					    <div class="form-group">
-                             <label for="NewAnswer">Duration</label>
-							 <div class="input-group date" id="datetimepicker3">
-                                 <span class="input-group-addon" id="basic-addon4">
-								 <span class="glyphicon glyphicon-time"></span>
-
-								 </span>
-								 <input type="text" class="form-control" id="QuizDuration" placeholder="Disabled input here..." disabled>
-                             </div> 
-					   </div>
-					   <div class="form-group">
-                             <label for="NewAnswer">Mark</label>
-							 <div class="input-group date" id="datetimepicker4">
-                                 <span class="input-group-addon" id="basic-addon5">
+					<div class="form-group">
+                        <label for="NewAnswer">Duration</label>
+						<div class="input-group date" id="datetimepicker3">
+                            <span class="input-group-addon" id="basic-addon4">
+								<span class="glyphicon glyphicon-time"></span>
+							</span>
+							<input type="text" class="form-control" id="QuizDuration" placeholder="Disabled input here..." disabled>
+                        </div> 
+					</div>
+					<div class="form-group">
+                        <label for="NewAnswer">Mark</label>
+						<div class="input-group date" id="datetimepicker4">
+                            <span class="input-group-addon" id="basic-addon5">
 								 <span class="glyphicon glyphicon-pencil"></span>
+							</span>
+							<input type="text" class="form-control" id="QuizMark" placeholder="Disabled input here..." disabled>
+                        </div> 
+					</div>
+    		    </div>
+    		</form>
+		</div>
+	</div>
+</div>
 
-								 </span>
-								 <input type="text" class="form-control" id="QuizMark" placeholder="Disabled input here..." disabled>
-                             </div> 
-					   </div>
-					   
-                     </form>
-                 </div>
-    </div>
-	
-</div>
-</div>
-</div>
