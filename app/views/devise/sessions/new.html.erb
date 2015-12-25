@@ -1,17 +1,40 @@
 
-<h2>Log in aweee</h2>
+
+<div class="row">
+   <div class="col-md-4" >
+   
+   </div>  
+   <div class="col-md-4" >
+   
+   </div>    
+   <div class="col-md-4">
+      <div class="panel panel-default"  style="background:white">
+        <div class="panel-body">
+          <div class="page-header">
+             <h3>Login </h3>
+          </div>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+   <div align="center">
+    <img src=<%= asset_path 'sbsfid4537dif.png' %> >
+   </div>
   <div class="field">
     <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
+    <div class="input-group">
+    <span class="input-group-addon">
+    <span class="glyphicon glyphicon-user"></span></span>
+    <%= f.email_field :email, autofocus: true ,:class=>"form-control",placeholder: 'Email'%>
+  </div>
   </div>
 
   <div class="field">
     <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
+    <div class="input-group">
+    <span class="input-group-addon">
+    <span class="glyphicon glyphicon-asterisk"></span></span>
+    <%= f.password_field :password, autocomplete: "off",:class=>"form-control" ,placeholder: 'Password'%>
   </div>
-
+  </div>
   <% if devise_mapping.rememberable? -%>
     <div class="field">
       <%= f.check_box :remember_me %>
@@ -19,9 +42,14 @@
     </div>
   <% end -%>
 
-  <div class="actions">
-    <%= f.submit "Log in" %>
+  <div class="actions", align="right">
+    <%= f.submit "Log in" ,:class=>"btn btn-primary"%>
   </div>
 <% end %>
+      </div>
+    </div>
+   </div>
+</div>
+
 
 <%= render "devise/shared/links" %>

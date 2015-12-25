@@ -6,23 +6,83 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body style="background:#dfeff5">
+<body  style="background:url('') no-repeat center center;">
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12">
+      <nav class="navbar navbar-fixed-top" role="navigation" style="background:#2a292b">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar collapse-1">
+             <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+          </button> <a class="navbar-brand" href="#">
+          Faculty of Engineering-Evaluation System</a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav" style="background:#2f2f2f">
+           
+          </ul>
+        
+          <ul class="nav navbar-nav navbar-right" style="background:#2a292b">
+          <!-- name of user-->
+              <li >
+              <a><%=@name%></a>
+            </li>
+            <!-- -->    
+            <li>
+              <a href="#">About</a>
+            </li>
+            <li>
+              <a href="#">Contact Us</a>
+            </li>
+            
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Settings<strong class="caret"></strong></a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a href="#">Privacy</a>
+                </li>
+                <li>
+                  <a href="#">Another action</a>
+                </li>
+                <li>
+                  <a href="#">Something else here</a>
+                </li>
+                <li class="divider">
+                </li>
+                <!-- appear only after login page-->
+                <li>
+                  <a href="#">Sign Out</a>
+                </li>
+                <!-- -->
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </div>
 
-<%= yield %>
+<%= yield %>  
+     
+<section id="contact" >
 
-
-<section id="contact">
-         <footer>
+         <footer class="footer navbar-bottom" style="background:#2a292b">
+         
             <div class="container">
                <div class="row">
                   <div class="col-md-12 col-lg-12">
-                     <div class="wow" data-wow-delay="0.4s">
-                        <div class="page-scroll marginbot-30">
-                           <a href="#intro" id="totop" class="btn btn-circle">
-                           <i class="fa fa-angle-double-up animated"></i>
+                  
+                     <div class="wow" data-wow-delay="0.4s" >
+                     
+                        <div class="page-scroll marginbot-30" >
+                        
+                           <a href="#intro" id="totop" class="btn btn-circle" >
+                          <!-- <i class="fa fa-angle-double-up animated"></i>-->
                            </a>
                         </div>
+                        
                      </div>
+                     
                      <p><a  target="_blank" style="color: white">EV-Sys</a> | <a href="http://asu.asugards.edu.eg/" target="_blank" style="color: white">ASU</a></p>
                      
                      </p>                
@@ -32,14 +92,15 @@
                      </p>
 
                        <ul class="company-social" style="text-align: center">
-                          <li class="social-facebook"><a href="https://www.facebook.com/pages/Faculty-of-Engineering-Ain-Shams-University/112035555475264?fref=ts" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                          <li class="social-facebook"><!--<a href="https://www.facebook.com/pages/Faculty-of-Engineering-Ain-Shams-University/112035555475264?fref=ts" target="_blank"><i class="fa fa-facebook"></i></a>--></li>
                           
                         
                         </ul> 
-
                   </div>
+                  
                </div>
             </div>
+            
          </footer>
       </section>
 </html>
