@@ -12,8 +12,9 @@ module ApplicationHelper
 	end
 
 	# instructor_ quizzes
-	def instructor_quizzes
+	def instructor_quizzes course
 		forms = current_instructor.forms
+		forms = forms.where(course_id: course)
 		quizzes = []
 		forms.each do |f|
 			if Quiz.find_by_quiz_id(f.form_id)
@@ -24,8 +25,9 @@ module ApplicationHelper
 	end
 
 	#instructor_sheets
-	def instructor_sheets
+	def instructor_sheets course
 		forms = current_instructor.forms
+		forms = forms.where(course_id: course)
 		sheets = []
 		forms.each do |f|
 		if Sheet.find_by_sheet_id(f.form_id)
@@ -36,8 +38,9 @@ module ApplicationHelper
 	end
 
 	#instructor_assignments
-	def instructor_assignments
+	def instructor_assignments course
 		forms = current_instructor.forms
+		forms = forms.where(course_id: course)
 		assignments = []
 		forms.each do |f|
 		if Assignment.find_by_assignment_id(f.form_id)
@@ -48,8 +51,9 @@ module ApplicationHelper
 	end
 
 	#instructor_feedbacks
-	def instructor_feedbacks
+	def instructor_feedbacks course
 			forms = current_instructor.forms
+			forms = forms.where(course_id: course)
 			feedbacks = []
 			forms.each do |f|
 			if Feedback.find_by_feedback_id(f.form_id)

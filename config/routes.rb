@@ -17,6 +17,7 @@ Rails.application.routes.draw do
 
   get 'student' => 'students#show'
   get 'course/:code' => 'courses#show'
+  get 'instructor/course' => 'instructors#course'
   get 'instructor/home' => 'instructors#home'
 
   #get 'forms/:form_id' => 'forms#show'
