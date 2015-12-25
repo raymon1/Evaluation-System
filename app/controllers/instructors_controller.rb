@@ -6,15 +6,15 @@ class InstructorsController < ApplicationController
 	before_filter :authenticate_user!
 
 	def home
-		
-		@course = current_instructor.courses.first
+		render template: '/instructors/home', locals: {course: current_instructor.courses.first.code}		
 	end
 
 
-	def course_change
-		c = params[:course_id]
-
-		
+	def course
+		puts "============================================"
+		c = params[:course]
+		render template: '/instructors/home', locals: {course: c}		
+		puts "++++++++++++++++++++++++++++++++++++++++++++"
 	end
 
 end

@@ -6,7 +6,7 @@
                 <div class="page-header">
                     <h3> <%= @form.title%></h3>
                 </div>
-				<form>
+				<form method="post" action="/answers", name="answers1" class="answers2" id="answers3" value="answers4">
 				 <!-- for loop according to number of questions from here -->
 					<% if @tfs.size>0 %>
 					    <div class="form-group" > 
@@ -24,10 +24,10 @@
 								                 <label for="NewAnswer">Answer</label>
 								<div class="radio">
 								     <label class="radio-inline">
-								         <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"> True
+								         <input type="radio" name=<%=q.question_id%> id="option1 #{<%=q.question_id%>}" value="True"> True
 								     </label>
 									 <label class="radio-inline">
-									     <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"> False
+									     <input type="radio" name=<%=q.question_id%> id="option2 #{<%=q.question_id%>}" value="False"> False
 									 </label>
 								</div>
 						   <!-- <div class="text">
@@ -86,7 +86,7 @@
                                 	<% q.choices.each do |c| %>
 										<div class="radio">
 									    	<label class="radio">
-									   	 		<input type="radio" name="inlineRadioOptions" id="Radio1" value="option1"> <%=c.choice%>
+									   	 		<input type="radio" name=<%=q.question.question_id%> id="Radio1" value=<%=c.mcq_id%>> <%=c.choice%>
 										    </label>
 										</div>
 									<%end%>
@@ -122,7 +122,7 @@
                            </div>
                            <div class="form-group"> -->
                                  <label for="NewAnswer">Answer</label>
-								 <textarea class="form-control" rows="3" placeholder="Your Answer..."></textarea>
+								 <textarea class="form-control" rows="3" placeholder="Your Answer..." name=<%=q.question_id%>></textarea>
 					 <!--	   </div>
 						  
 						   <div class="text">
@@ -164,7 +164,7 @@
 
 <!-- ------------------------------------------------------------------------------------ -->
 
-					<% if @essayqs.size > 0 %>
+					<% if @numqs.size > 0 %>
  						<div class="form-group">
                             <label class="text-inline" id="NewQuestion">Calculate </label>
                             <br><br>
@@ -188,7 +188,7 @@
                            </div>
                            <div class="form-group"> -->
                                  <label for="NewAnswer">Answer</label>
-								 <textarea class="form-control" rows="3" placeholder="Your Answer..."></textarea>
+								 <textarea class="form-control" rows="3" placeholder="Your Answer..." name=<%=q.question_id%>></textarea>
 					 <!--	   </div>
 						  
 						   <div class="text">
@@ -230,16 +230,12 @@
 					   <div align="right">
                       <button type="submit"  class="btn btn-primary" > Submit</button>
 					 </div>
-
-
-
 			    </form>
 			</div>
 		</div>
 	</div>
  <form>
-							 <!-- for loop according to number of questions from here -->
-						
+							 
 
 
 
