@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 20151223113100) do
   create_table "answers", id: false, force: :cascade do |t|
     t.integer "student_id",  null: false
     t.integer "question_id", null: false
+    t.text    "answer"
   end
 
   create_table "assignments", primary_key: "assignment_id", force: :cascade do |t|
