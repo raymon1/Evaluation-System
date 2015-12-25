@@ -38,4 +38,11 @@ config.authorize_with do
     # history_index
     # history_show
   end
+
+  config.excluded_models << "Teach"
+  config.excluded_models << "Enrollin"
+  config.excluded_models << "Answer"
+  config.excluded_models << "StudentTakeForm"
+
 end
+

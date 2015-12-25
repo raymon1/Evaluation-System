@@ -1,0 +1,13 @@
+<label class="text" >
+    <%=q.question.question%>
+</label>
+<form action="">
+  <% q.choices.each do |c| %>
+	<div class="radio">
+		<label class="radio">
+			<input type="radio" name="inlineRadioOptions" id="Radio1" value="option1"> <%=c.choice%>
+		</label>
+	</div>
+  <%end%>
+  </form>
+</label>
