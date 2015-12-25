@@ -1,12 +1,20 @@
 class InstructorsController < ApplicationController
 
+	include ApplicationHelper
+
 
 	before_filter :authenticate_user!
 
 	def home
 		
-		instructor = Instructor.find(current_user.college_id)
-		@courses = instructor.courses
+		@course = current_instructor.courses.first
+	end
+
+
+	def course_change
+		c = params[:course_id]
+
+		
 	end
 
 end
