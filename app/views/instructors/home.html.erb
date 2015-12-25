@@ -150,16 +150,7 @@
 			
 			<div class="row">
 				<div class="col-md-3">
-					<%= button_to "Create Quiz" ,{}, {:type => 'button', :class => 'btn btn-success btn-default'} %>
-				</div>
-				<div class="col-md-3">
-					<%= button_to "Create Assignment",{}, {:type => 'button', :class => 'btn btn-success btn-default'} %>
-				</div>
-				<div class="col-md-3">
-					<%= button_to "Create Sheet",{}, {:type => 'button', :class => 'btn btn-success btn-default'} %>
-				</div>
-				<div class="col-md-3">
-					<%= button_to "Create Feedback",{}, {:type => 'button', :class => 'btn btn-success btn-default'}%>
+					<%= link_to "Create Quiz" ,{controller: "quizzes" ,action: "show"}, {:type => 'button', :class => 'btn btn-success btn-default'} %>
 				</div>
 			</div> 
 		</div>

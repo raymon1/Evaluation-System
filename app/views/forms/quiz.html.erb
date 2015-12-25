@@ -1,0 +1,79 @@
+
+    <div class="container-fluid" >
+
+	<div class="row">
+		<div class="col-md-8">
+		     <div class="panel panel-default">
+		                 <div class="panel-body">
+		                     <div align= "middle" class="page-header">
+		                         <h3> New Quiz</h3>
+		                     </div>
+							 
+
+							 <div id="question_add">
+
+							 </div>
+
+
+								<div class="col-md-4" align= "middle">
+<%= link_to "Add MCQ" ,{controller: "quizzes",action: "add_mcq"},remote: true ,:type=>"button",:class => "button btn btn-success btn-default"%>
+				</div>
+				<div class="col-md-4" align="middle">
+<%= link_to "Add True or false",{controller: "quizzes",action: "add_tf"},remote: true ,:type=>"button",:class => "button btn btn-success btn-default"%>
+				</div>
+				<div class="col-md-4" align = "middle">
+<%= link_to "Add Essay",{controller: "quizzes",action: "add_essay"},remote: true ,:type=>"button",:class => "button btn btn-success btn-default"%>
+				</div>               
+				<br> </br>     
+				<br> </br>            
+							   <!-- till here -->
+							   <div align="middle">
+			<%= button_to "submit", {controller: "quizzes",action:"create"} ,{:type => "submit",:class => "btn btn-primary"}%>
+							 </div>
+
+                                     <p><br/></p>
+                            
+		                 </div>
+		     </div>
+		</div>
+		<div class="col-md-4">
+				<%= render partial: "forms/quizInfo" %>
+		</div>
+	</div>
+</div>
+
+
+
+			    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/scripts.js"></script>
+	 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <script src="https://raw.githubusercontent.com/moment/moment/develop/moment.js"></script>
+    <script src="https://raw.githubusercontent.com/moment/moment/master/locale/id.js"></script>
+    <script src="https://raw.githubusercontent.com/Eonasdan/bootstrap-datetimepicker/master/build/js/bootstrap-datetimepicker.min.js"></script>
+    <script>
+    $(function () {
+		$('#datetimepicker1').datetimepicker({
+		format: 'DD/MM/YYYY'
+			
+		});
+	});
+    </script>
+	<script>
+    $(function () {
+		$('#datetimepicker2').datetimepicker({
+			format: 'LT'
+		});
+	});
+    </script>
+	<script>
+    $(function () {
+		$('#datetimepicker3').datetimepicker({
+			format: 'LT'
+		});
+	});
+    </script>
+	

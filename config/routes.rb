@@ -20,6 +20,15 @@ Rails.application.routes.draw do
   get 'instructor/course' => 'instructors#course'
   get 'instructor/home' => 'instructors#home'
 
+  get 'quiz' => 'quizzes#show'
+  get 'quiz/add' => 'quizzes#add'
+  get 'quiz/add_mcq' => 'quizzes#add_mcq'
+  get 'quiz/add_tf' => 'quizzes#add_tf'
+  get 'quiz/add_essay' => 'quizzes#add_essay'
+
+  post 'quiz/create' => 'quizzes#create'
+
+
   #get 'forms/:form_id' => 'forms#show'
 
   # Example of regular route:
