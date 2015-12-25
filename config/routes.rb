@@ -18,7 +18,7 @@ Rails.application.routes.draw do
   get 'student' => 'students#show'
   get 'course/:code' => 'courses#show'
   get 'instructor/home' => 'instructors#home'
-
+  post 'answers/' => 'answers#create'
   #get 'forms/:form_id' => 'forms#show'
 
   # Example of regular route:
