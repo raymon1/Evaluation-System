@@ -61,6 +61,13 @@ Course.create(code: "CSE5",name:"security",studying_year: 4)
 Course.create(code: "CSE6",name:"logic",studying_year: 4)
 Course.create(code: "CSE7",name:"data structure",studying_year: 4)
 
+#enrollins
+Enrollin.create(code: "CSE1",student_id:1,semester:"First")
+Enrollin.create(code: "CSE2",student_id:2,semester:"First")
+Enrollin.create(code: "CSE3",student_id:2,semester:"First")
+Enrollin.create(code: "CSE4",student_id:1,semester:"First")
+
+
 
 # Forms
 Form.create(form_id: 1, course_id: "CSE1", instructor_id: 11,title: "Quiz 1")
@@ -82,7 +89,7 @@ Student.find(1).courses << Course.find("CSE2")
 Student.find(1).courses << Course.find("CSE3")
 
 #quizzes of a certain course
-Student.find(1).forms << Form.find(1)
+#Student.find(1).forms << Form.find(1)
 Student.find(1).forms << Form.find(2)
 Student.find(1).forms << Form.find(3)
 

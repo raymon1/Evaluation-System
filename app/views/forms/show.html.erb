@@ -4,9 +4,12 @@
 	    <div class="panel panel-default">
             <div class="panel-body">
                 <div class="page-header">
-                    <h3> <%= @form.title%></h3>
+                    <h3><%=@form.title%></h3>
                 </div>
+
 				<form method="post" action="/answers", name="answers1" class="answers2" id="answers3" value="answers4">
+
+				<form method="post" action="/forms/<%=@form.form_id%>/answers/" controller="answers">
 				 <!-- for loop according to number of questions from here -->
 					<% if @tfs.size>0 %>
 					    <div class="form-group" > 
@@ -87,6 +90,7 @@
 										<div class="radio">
 									    	<label class="radio">
 									   	 		<input type="radio" name=<%=q.question.question_id%> id="Radio1" value=<%=c.mcq_id%>> <%=c.choice%>
+									   	 		<input type="radio" name=<%=q.question.question_id%> id="Radio1" value="<%=c.choice%>"> <%=c.choice%>
 										    </label>
 										</div>
 									<%end%>
