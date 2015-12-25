@@ -25,10 +25,8 @@ Rails.application.routes.draw do
   get 'quiz/add_mcq' => 'quizzes#add_mcq'
   get 'quiz/add_tf' => 'quizzes#add_tf'
   get 'quiz/add_essay' => 'quizzes#add_essay'
-
   post 'quiz/create' => 'quizzes#create'
-
-
+  post 'answers/' => 'answers#create'
   #get 'forms/:form_id' => 'forms#show'
 
   # Example of regular route:
