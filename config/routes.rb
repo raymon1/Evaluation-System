@@ -32,6 +32,8 @@ Rails.application.routes.draw do
 
   post 'answers/' => 'answers#create'
 
+  root 'students#show'
+
   #get 'forms/:form_id' => 'forms#show'
 
   # Example of regular route:

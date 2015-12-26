@@ -20,24 +20,27 @@ ActiveRecord::Schema.define(version: 20151223113100) do
   end
 
   create_table "answers", id: false, force: :cascade do |t|
-    t.integer "student_id",  null: false
-    t.integer "question_id", null: false
-    t.text    "answer"
+    t.integer "student_id",     null: false
+    t.integer "question_id",    null: false
+    t.text    "student_answer"
   end
 
+  add_index "answers", ["question_id"], name: "answers_question_id_key", unique: true, using: :btree
+  add_index "answers", ["student_id"], name: "answers_student_id_key", unique: true, using: :btree
+
   create_table "assignments", primary_key: "assignment_id", force: :cascade do |t|
-    t.datetime "deadline"
+    t.datetime "deadline", default: "now()"
   end
 
   create_table "courses", primary_key: "code", force: :cascade do |t|
-    t.string  "name",          limit: 100, null: false
+    t.string  "name",          limit: 100, default: "New Course"
     t.integer "studying_year"
   end
 
   create_table "enrollins", id: false, force: :cascade do |t|
-    t.string  "course_id",  limit: 10, null: false
-    t.integer "student_id",            null: false
-    t.string  "semester",   limit: 20
+    t.string  "course_id",  limit: 10,                  null: false
+    t.integer "student_id",                             null: false
+    t.string  "semester",   limit: 20, default: "FALL"
   end
 
   create_table "essay_questions", primary_key: "essay_id", force: :cascade do |t|
@@ -45,32 +48,32 @@ ActiveRecord::Schema.define(version: 20151223113100) do
   end
 
   create_table "feedbacks", primary_key: "feedback_id", force: :cascade do |t|
-    t.integer "no_of_times_taken"
+    t.integer "no_of_times_taken", default: 0
   end
 
   create_table "forms", primary_key: "form_id", force: :cascade do |t|
-    t.string   "course_id",          limit: 10
-    t.integer  "instructor_id"
-    t.string   "title",              limit: 100
+    t.string   "course_id",          limit: 10,                       null: false
+    t.integer  "instructor_id",                                       null: false
+    t.string   "title",              limit: 100, default: "New Form"
     t.integer  "no_of_questions"
-    t.datetime "creation_time_date"
+    t.datetime "creation_time_date",             default: "now()"
   end
 
   create_table "instructors", primary_key: "instructor_id", force: :cascade do |t|
-    t.string "major", limit: 100
+    t.string "major", limit: 100, default: "XY_PhD"
   end
 
   create_table "mcq_choices", primary_key: "mcq_id", force: :cascade do |t|
-    t.integer "question_id"
-    t.text    "choice"
+    t.integer "question_id", null: false
+    t.text    "choice",      null: false
   end
 
   create_table "mcqs", primary_key: "mcq_id", force: :cascade do |t|
-    t.text "answer"
+    t.text "answer", null: false
   end
 
   create_table "numerical_questions", primary_key: "numerical_question_id", force: :cascade do |t|
-    t.float "answer"
+    t.float "answer", null: false
   end
 
   create_table "phone_numbers", id: false, force: :cascade do |t|
@@ -78,42 +81,43 @@ ActiveRecord::Schema.define(version: 20151223113100) do
     t.string  "phone",      limit: 15, null: false
   end
 
+  add_index "phone_numbers", ["college_id"], name: "phone_numbers_college_id_key", unique: true, using: :btree
   add_index "phone_numbers", ["phone"], name: "phone_numbers_phone_key", unique: true, using: :btree
 
   create_table "questions", primary_key: "question_id", force: :cascade do |t|
-    t.integer "form_id"
-    t.text    "question"
+    t.integer "form_id",                                 null: false
+    t.text    "question",                                null: false
     t.integer "mark"
-    t.text    "explanation"
-    t.integer "difficulty"
-    t.text    "hint"
-    t.boolean "bonus"
-    t.integer "hint_mark"
+    t.text    "explanation", default: "Explanation N/A"
+    t.integer "difficulty",  default: 3
+    t.text    "hint",        default: "HINT N/A"
+    t.boolean "bonus",       default: false
+    t.integer "hint_mark",   default: 0
   end
 
   create_table "quizzes", primary_key: "quiz_id", force: :cascade do |t|
     t.float    "duration"
     t.float    "quiz_mark"
     t.float    "avg_mark"
-    t.datetime "publish_date"
+    t.datetime "publish_date", default: "now()"
   end
 
   create_table "sheets", primary_key: "sheet_id", force: :cascade do |t|
-    t.integer "sheet_number"
+    t.integer "sheet_number", default: 0
   end
 
   create_table "student_take_forms", id: false, force: :cascade do |t|
-    t.integer  "form_id",         null: false
-    t.integer  "student_id",      null: false
-    t.datetime "submission_date"
+    t.integer  "form_id",                           null: false
+    t.integer  "student_id",                        null: false
+    t.datetime "submission_date", default: "now()"
     t.float    "student_mark"
   end
 
   create_table "students", primary_key: "student_id", force: :cascade do |t|
-    t.integer "seat_no",                   null: false
-    t.integer "section",       limit: 2
-    t.integer "studying_year"
-    t.string  "department",    limit: 100
+    t.integer "seat_no",                                    null: false
+    t.integer "section",       limit: 2,   default: 0
+    t.integer "studying_year",             default: 0
+    t.string  "department",    limit: 100, default: "PREP"
   end
 
   add_index "students", ["seat_no"], name: "students_seat_no_key", unique: true, using: :btree
@@ -124,7 +128,7 @@ ActiveRecord::Schema.define(version: 20151223113100) do
   end
 
   create_table "tfs", primary_key: "tf_id", force: :cascade do |t|
-    t.boolean "answer"
+    t.boolean "answer", null: false
   end
 
   create_table "users", primary_key: "college_id", force: :cascade do |t|
@@ -132,16 +136,16 @@ ActiveRecord::Schema.define(version: 20151223113100) do
     t.string   "gender",                 limit: 7,    default: "male"
     t.string   "image",                  limit: 1000
     t.string   "national_id",            limit: 20
-    t.string   "address",                limit: 1000
-    t.string   "first_name",             limit: 30
-    t.string   "middle_name",            limit: 30
-    t.string   "last_name",              limit: 30
-    t.string   "email",                               default: "",     null: false
-    t.string   "encrypted_password",                  default: "",     null: false
+    t.string   "address",                limit: 1000, default: "EGY"
+    t.string   "first_name",             limit: 30,   default: "Fname"
+    t.string   "middle_name",            limit: 30,   default: "Mname"
+    t.string   "last_name",              limit: 30,   default: "Lname"
+    t.string   "email",                               default: "",      null: false
+    t.string   "encrypted_password",                  default: "",      null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",                       default: 0,      null: false
+    t.integer  "sign_in_count",                       default: 0,       null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.inet     "current_sign_in_ip"
@@ -154,10 +158,10 @@ ActiveRecord::Schema.define(version: 20151223113100) do
 
   add_foreign_key "admins", "users", column: "admin_id", primary_key: "college_id", name: "admins_admin_id_fkey"
   add_foreign_key "answers", "questions", primary_key: "question_id", name: "answers_question_id_fkey"
-  add_foreign_key "answers", "students", primary_key: "student_id", name: "answers_student_id_fkey"
+  add_foreign_key "answers", "users", column: "student_id", primary_key: "college_id", name: "answers_student_id_fkey"
   add_foreign_key "assignments", "forms", column: "assignment_id", primary_key: "form_id", name: "assignments_assignment_id_fkey"
   add_foreign_key "enrollins", "courses", primary_key: "code", name: "enrollins_course_id_fkey"
-  add_foreign_key "enrollins", "students", primary_key: "student_id", name: "enrollins_student_id_fkey"
+  add_foreign_key "enrollins", "users", column: "student_id", primary_key: "college_id", name: "enrollins_student_id_fkey"
   add_foreign_key "essay_questions", "questions", column: "essay_id", primary_key: "question_id", name: "essay_questions_essay_id_fkey"
   add_foreign_key "feedbacks", "forms", column: "feedback_id", primary_key: "form_id", name: "feedbacks_feedback_id_fkey"
   add_foreign_key "forms", "courses", primary_key: "code", name: "forms_course_id_fkey"
@@ -171,9 +175,9 @@ ActiveRecord::Schema.define(version: 20151223113100) do
   add_foreign_key "quizzes", "forms", column: "quiz_id", primary_key: "form_id", name: "quizzes_quiz_id_fkey"
   add_foreign_key "sheets", "forms", column: "sheet_id", primary_key: "form_id", name: "sheets_sheet_id_fkey"
   add_foreign_key "student_take_forms", "forms", primary_key: "form_id", name: "student_take_forms_form_id_fkey"
-  add_foreign_key "student_take_forms", "students", primary_key: "student_id", name: "student_take_forms_student_id_fkey"
+  add_foreign_key "student_take_forms", "users", column: "student_id", primary_key: "college_id", name: "student_take_forms_student_id_fkey"
   add_foreign_key "students", "users", column: "student_id", primary_key: "college_id", name: "students_student_id_fkey"
   add_foreign_key "teaches", "courses", primary_key: "code", name: "teaches_course_id_fkey"
-  add_foreign_key "teaches", "instructors", primary_key: "instructor_id", name: "teaches_instructor_id_fkey"
+  add_foreign_key "teaches", "users", column: "instructor_id", primary_key: "college_id", name: "teaches_instructor_id_fkey"
   add_foreign_key "tfs", "questions", column: "tf_id", primary_key: "question_id", name: "tfs_tf_id_fkey"
 end

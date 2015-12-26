@@ -15,6 +15,10 @@
             <div align="center">
               <img src=<%= asset_path 'sbsfid4537dif.png' %> >
              </div>
+                      <% flash.each do |name, msg| %>
+    <%= content_tag :div, msg, :id => "flash_#{name}" if msg.is_a?(String) %>
+  <% end %>  
+
              <div class="field">
               <%= f.label :email %><br />
               <div class="input-group">
