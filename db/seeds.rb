@@ -158,6 +158,8 @@ Teach.create(course_id:"CSE2" , instructor_id: 12 )
 Teach.create(course_id:"CSE3" , instructor_id: 13 )
 Teach.create(course_id:"CSE1" , instructor_id: 14 )
 Teach.create(course_id:"CSE2" , instructor_id: 15 )
+Teach.create(course_id:"CSE4" , instructor_id: 11 )
+Teach.create(course_id:"CSE5" , instructor_id: 11 )
 
 #question
 #Quiz Sample
