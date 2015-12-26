@@ -30,17 +30,6 @@
 								<li>
 							<%= link_to "Sign out", destroy_user_session_path, method: :delete %>  
 								</li>
-<!-- 								<li>
-									<a href="#">Another action</a>
-								</li>
-								<li>
-									<a href="#">Something else here</a>
-								</li>
-								<li class="divider">
-								</li>
-								<li>
-									<a href="#">Separated link</a>
-								</li> -->
 							</ul>
 						</li>
 					</ul>
@@ -68,42 +57,36 @@
 							<span class="caret"></span>
 						</button>
 						<ul class="dropdown-menu">
-							<% current_instructor.courses.each do |c| %>
+							<% instructor_courses.each do |c| %>
 							<li>
-						<%= link_to c.code ,{controller:"instructors",action:"course",course: c.code }%>
+			<%= link_to c["code"] ,{controller:"instructors",action:"course",course: c["code"] }%>
 							</li>
 							<% end %>
 						</ul>
 					</div>
 				</div>
-				<!-- <div class="col-md-4">
-					<img alt="Bootstrap Image Preview" src="http://lorempixel.com/140/140/" class="img-circle">
-				</div> -->
 			</div>
 			<br></br>
 			<div class="row">
 				<div class="col-md-3">
-					<h3>
+					<h3 align="middle">
 						Quiz
 					</h3>
 					<ul class="list-group">
 						<% quizzes = instructor_quizzes course %>
 						<% quizzes.each do |q| %>
-					  <li class="list-group-item"><a href="/forms/<%=q.quiz_id%>"> <%= q.quiz_id %> </a></li>
+					  <li class="list-group-item" align = "middle" ><a href="/forms/<%=q["form_id"]%>"> <%= q["title"] %> </a></li>
 					 	<% end %>
 					</ul>
-					<!-- <button type="button" class="btn btn-success btn-default">
-						Create Quiz
-					</button> -->
 				</div>
 				<div class="col-md-3">
-					<h3>
+					<h3 align="middle">
 						Assignement
 					</h3>
 					<ul class="list-group">
 					  	<% assignments = instructor_assignments course %>
 						<% assignments.each do |q| %>
-					  <li class="list-group-item"><a href="/forms/<%= q.assignment_id %>"><%= q.assignment_id %></a></li>
+					  <li class="list-group-item" align = "middle" ><a href="/forms/<%= q["form_id"] %>"><%= q["title"] %></a></li>
 					  <% end %>
 					</ul>
 					<!-- <button type="button" class="btn btn-success btn-default">
@@ -111,13 +94,13 @@
 					</button> -->
 				</div>
 					<div class="col-md-3">
-					<h3>
+					<h3 align="middle">
 						Sheet
 					</h3>
 					<ul class="list-group">
 					  <% sheets = instructor_sheets course %>
 						<% sheets.each do |q| %>
-					  <li class="list-group-item"><a href="/forms/<%= q.sheet_id %>s"><%= q.sheet_id %></a></li>
+					  <li class="list-group-item" align = "middle" ><a href="/forms/<%= q["form_id"] %>s"><%= q["title"] %></a></li>
 					  <%end%>
 					</ul>
 					<!-- <button type="button" class="btn btn-success btn-default">
@@ -125,13 +108,13 @@
 					</button> -->
 				</div>
 				<div class="col-md-3">
-					<h3>
+					<h3 align="middle">
 						Feedback
 					</h3>
 					<ul class="list-group">
 						<% feedbacks = instructor_feedbacks course %>
 						<% feedbacks.each do |q| %>					 
-						 <li class="list-group-item"><a href="<%= q.feedback_id %>"><%= q.feedback_id %></a></li>
+						 <li class="list-group-item" align = "middle" ><a href="<%= q["form_id"] %>"><%= q["title"] %></a></li>
 					  <%end%>
 					</ul>
 					<!-- <button type="button" class="btn btn-success btn-default">
