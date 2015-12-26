@@ -149,8 +149,17 @@
 
 			
 			<div class="row">
-				<div class="col-md-3">
+				<div class="col-md-3" align="middle">
 					<%= link_to "Create Quiz" ,{controller: "quizzes" ,action: "show"}, {:type => 'button', :class => 'btn btn-success btn-default'} %>
+				</div>
+				<div class="col-md-3" align="middle">
+					<%= link_to "Create Assignment" ,{controller: "assignments" ,action: "show"}, {:type => 'button', :class => 'btn btn-success btn-default'} %>
+				</div>
+				<div class="col-md-3" align="middle">
+					<%= link_to "Create Sheet" ,{controller: "sheets" ,action: "show"}, {:type => 'button', :class => 'btn btn-success btn-default'} %>
+				</div>
+				<div class="col-md-3" align="middle">
+					<%= link_to "Create Feedback" ,{controller: "feedbacks" ,action: "show"}, {:type => 'button', :class => 'btn btn-success btn-default'} %>
 				</div>
 			</div> 
 		</div>
