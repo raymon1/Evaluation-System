@@ -1,7 +1,7 @@
 class CreateForms < ActiveRecord::Migration
   def change
       execute "CREATE TABLE forms(                              \
-      form_id                   INTEGER   UNIQUE NOT NULL                    ,\
+      form_id                   SERIAL                       ,\
       course_id               VARCHAR(10)    NOT NULL                           ,\
       instructor_id          INTEGER          NOT NULL                           ,\
       title                    VARCHAR(100)   DEFAULT 'New Form'                 ,\
