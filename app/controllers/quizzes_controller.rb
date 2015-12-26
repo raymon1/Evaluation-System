@@ -3,12 +3,13 @@ class QuizzesController < ApplicationController
 
 
 	def show 
-		render template: "/forms/quiz"
+		render template: "/forms/quiz",locals: {course: params[:c]}
 	end
 
 	def create
+		puts "//////////////////////////////////////////////////////"
 		puts params
-		form = Form.create(course_id: params[:code],
+		form = Form.create(form_id: 200, course_id: params["course_id"],
 			instructor_id: current_user.college_id,
 			title: params["title"], creation_time_date: Time.now)
 
@@ -19,7 +20,8 @@ class QuizzesController < ApplicationController
 		quiz = Quiz.create(quiz_id: form.form_id, duration: dur, quiz_mark: quiz_mark, publish_date: pub_date)
 
 		
-		mcq_count = params[mcq_counter]
+		mcq_count = params["mcq_counter"]
+		mcq_count = mcq_count.to_i
 		for i in 1..mcq_count
 			qmark = params["mcq_question_mark" + i.to_s]
 			question = params["mcq_question" + i.to_s]
@@ -28,16 +30,17 @@ class QuizzesController < ApplicationController
 			hmark = params["mcq_hint_mark" + i.to_s]
 			hint = params["mcq_hint" + i.to_s]
 			bonus = params["bonus" + i.to_s]==""? false : true
+
 			if params["mcq_answer_ch1" + i.to_s] == "option1"
 				answer=choice1
 			else
 				answer=choice2
 			end
 
-			ques = Question.create(form_id: form.form_id, question: question, mark: qmark, hint: hint, hint_mark: hmark, bonus: bonus)
+			ques = Question.create(question_id: 220,form_id: form.form_id, question: question, mark: qmark, hint: hint, hint_mark: hmark, bonus: bonus)
 			Mcq.create(mcq_id: ques.question_id, answer: answer)
-			McqChoice.create(question_id: ques.question_id, choice: choice1)
-			McqChoice.create(question_id: ques.question_id, choice: choice2)
+			McqChoice.create(question_id: ques.question_id,mcq_id: ques.question_id, choice: choice1)
+			McqChoice.create(question_id: ques.question_id,mcq_id: ques.question_id,  choice: choice2)
 		end
 
 
@@ -95,5 +98,10 @@ class QuizzesController < ApplicationController
   		end 
 	end
 
+
+private
+    def form_params
+        params.require(:form).permit(:form_id, :instructor_id, :course_id, :title, :no_of_questions)
+    end
 
 end
