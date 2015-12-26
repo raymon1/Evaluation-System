@@ -15,10 +15,8 @@ output.to_a
 	end
 
 	def course
-		puts "============================================"
 		c = params[:course]
 		render template: '/instructors/home', locals: {course: c}		
-		puts "++++++++++++++++++++++++++++++++++++++++++++"
 	end
 
 end

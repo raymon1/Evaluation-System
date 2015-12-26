@@ -1,4 +1,5 @@
 		 <form method="post" action="/quiz/create">
+		 	<textarea type="text" name="mcq_counter" id="counter1" value="0" hidden></textarea>
     <div class="container-fluid" >
 
 	<div class="row">
@@ -15,9 +16,9 @@
 
 							 </div>
 
-
-<div class="col-md-4" align= "middle">
-<%= link_to "Add MCQ" ,{controller: "quizzes",action: "add_mcq"},remote: true ,:type=>"button",:class => "button btn btn-success btn-default"%>
+								<div class="col-md-4" align= "middle">
+<%= link_to "Add MCQ" , onclick: 'incrementValue()',remote: false ,:type=>"button",:class => "button btn btn-success btn-default"%>
+<input type="button" onclick='incrementValue()' value="ADD MCQ " />
 				</div>
 <div class="col-md-4" align="middle">
 <%= link_to "Add True or false",{controller: "quizzes",action: "add_tf"},remote: true ,:type=>"button",:class => "button btn btn-success btn-default"%>
@@ -80,3 +81,33 @@
 	});
     </script>
 	
+
+<script>
+
+function incrementValue()
+{
+    var value = parseInt(document.getElementById('counter1').value, 10);
+    value = isNaN(value) ? 0 : value;
+    value++;
+    document.getElementById('counter1').value = value;
+    
+    var svalue = value.toString();
+
+    var html1 = '<div class="form-group"> <label class="text-inline" id="NewQuestion">Question </label>  <label class="text-inline" > <input name= "mcq_question_mark'+ svalue + '" type="text" class="form-control" placeholder="Question Mark" id="QMark">	 </label>	 <div>	 <textarea name= "mcq_question' + svalue + '" class="form-control" rows="3"></textarea>	 </div> </div><div class="form-group">  <label for="NewAnswer">Answer</label>      <div class="radio">         <label>         <input name= "mcq_answer_ch1' + svalue + '" type="radio" name="optionsRadios" id="optionsRadios1" value="option1">         <textarea name= "mcq_choice1_' + svalue + '" class="form-control" rows="3"></textarea>      </label> </div>	<div class="radio">		<label>			<input name= "mcq_answer_ch2' + svalue + '" type="radio" name="optionsRadios" id="optionsRadios1"value="option1">				<textarea name ="mcq_choice2_' + svalue +'" class="form-control" rows="3"></textarea>		</label>	</div><div><div class="checkbox">     <label class="checkbox-inline">     <input name="mcq_bonus' + svalue +'" type="checkbox" value="">Bouns</label></div><div class="checkbox">	<label class="checkbox-inline">	     <input name="mcq_hint_enable' + svalue + '" type="checkbox" value="">Hint	 </label>		<label class="text-inline" >	     <input name= "mcq_hint_mark' + svalue + '" type="text" class="form-control" placeholder="Hint Mark" id="QhintMark">	</label>	<label class="text-inline" >	     <input name="mcq_hint' + svalue + '" type="text" class="form-control" placeholder="Hint" id="Qhint">	</label>	</div>  <br> </br>';
+
+
+
+    
+    
+    var d1 = document.getElementById('question_add');
+      d1.insertAdjacentHTML('beforeend', html1);    
+}
+
+
+</script>
+
+
+
+
+	
+
