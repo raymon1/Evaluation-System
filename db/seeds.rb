@@ -216,41 +216,32 @@ NumericalQuestion.create(numerical_question_id: 20, answer: 10)
 #MCQS
 Mcq.create(mcq_id: 5, answer: "ENIAC")
 Mcq.create(mcq_id: 6, answer: "Neil Armstrong")
-Mcq.create(mcq_id: 13, answer: "ENIAC")
-Mcq.create(mcq_id: 14, answer: "Neil Armstrong")
-Mcq.create(mcq_id: 21, answer: "ENIAC")
-Mcq.create(mcq_id: 22, answer: "Neil Armstrong")
-Mcq.create(mcq_id: 25, answer: "Very Good")
-Mcq.create(mcq_id: 26, answer: "Very Good")
+# Mcq.create(mcq_id: 13, answer: "ENIAC")
+# Mcq.create(mcq_id: 14, answer: "Neil Armstrong")
+# Mcq.create(mcq_id: 21, answer: "ENIAC")
+# Mcq.create(mcq_id: 22, answer: "Neil Armstrong")
+# Mcq.create(mcq_id: 25, answer: "Very Good")
+# Mcq.create(mcq_id: 26, answer: "Very Good")
 
 #mcqs choicees
-McqChoice.create(question_id: 5, mcq_id: 1, choice: "Sakhr")
-McqChoice.create(question_id: 5, mcq_id: 2, choice: "ENIAC")
-McqChoice.create(question_id: 5, mcq_id: 3, choice: "Microsft")
-McqChoice.create(question_id: 5, mcq_id: 4, choice: "other")
-McqChoice.create(question_id: 6, mcq_id: 5, choice: "Lucy")
-McqChoice.create(question_id: 6, mcq_id: 6, choice: "Lucky")
-McqChoice.create(question_id: 6, mcq_id: 7, choice: "Neil Armstrong")
+McqChoice.create(mcq_id: 5, choice: "Sakhr")
+McqChoice.create(mcq_id: 5, choice: "ENIAC")
+McqChoice.create(mcq_id: 5, choice: "Microsft")
+McqChoice.create(mcq_id: 5, choice: "other")
+McqChoice.create(mcq_id: 6, choice: "Lucy")
+McqChoice.create(mcq_id: 6, choice: "Neil Armstrong")
+McqChoice.create(mcq_id: 6, choice: "Lucky")
 
-McqChoice.create(question_id: 13, mcq_id: 8, choice: "Sakhr")
-McqChoice.create(question_id: 13, mcq_id: 9, choice: "ENIAC")
-McqChoice.create(question_id: 14, mcq_id: 10, choice: "Lucy")
-McqChoice.create(question_id: 14, mcq_id: 11, choice: "Neil Armstrong")
 
-McqChoice.create(question_id: 21, mcq_id: 12, choice: "Sakhr")
-McqChoice.create(question_id: 21, mcq_id: 13, choice: "ENIAC")
-McqChoice.create(question_id: 22, mcq_id: 14, choice: "Lucy")
-McqChoice.create(question_id: 22, mcq_id: 15, choice: "Neil Armstrong")
+# McqChoice.create(question_id: 25, mcq_id: 16, choice: "Fair")
+# McqChoice.create(question_id: 25, mcq_id: 17, choice: "Good")
+# McqChoice.create(question_id: 25, mcq_id: 18, choice: "Very Good")
+# McqChoice.create(question_id: 25, mcq_id: 19, choice: "Excellent")
 
-McqChoice.create(question_id: 25, mcq_id: 16, choice: "Fair")
-McqChoice.create(question_id: 25, mcq_id: 17, choice: "Good")
-McqChoice.create(question_id: 25, mcq_id: 18, choice: "Very Good")
-McqChoice.create(question_id: 25, mcq_id: 19, choice: "Excellent")
-
-McqChoice.create(question_id: 26, mcq_id: 20, choice: "Fair")
-McqChoice.create(question_id: 26, mcq_id: 21, choice: "Good")
-McqChoice.create(question_id: 26, mcq_id: 22, choice: "Very Good")
-McqChoice.create(question_id: 26, mcq_id: 23, choice: "Excellent")
+# McqChoice.create(question_id: 26, mcq_id: 20, choice: "Fair")
+# McqChoice.create(question_id: 26, mcq_id: 21, choice: "Good")
+# McqChoice.create(question_id: 26, mcq_id: 22, choice: "Very Good")
+# McqChoice.create(question_id: 26, mcq_id: 23, choice: "Excellent")
 
 #essay
 EssayQuestion.create(essay_id: 7, answer: "surface presssure is lower than atmospheric pressure")
@@ -261,7 +252,6 @@ EssayQuestion.create(essay_id: 23, answer: "surface presssure is lower than atmo
 EssayQuestion.create(essay_id: 24, answer: "I'm fine")
 
 #Student fill a form
-StudentTakeForm.create(form_id: 1, student_id:1 , student_mark: 10);
 StudentTakeForm.create(form_id: 1, student_id: 2, student_mark: 10);
 StudentTakeForm.create(form_id: 1, student_id: 3, student_mark: 10);
 StudentTakeForm.create(form_id: 1, student_id: 4, student_mark: 10);

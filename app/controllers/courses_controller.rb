@@ -11,36 +11,33 @@ class CoursesController < ApplicationController
   # GET /courses/1
   # GET /courses/1.json
   def show
-    @course = set_course
-    @forms = Form.where(course_id: @course.code)
-    
-    @quizzes = []
-    @feedbacks = []
-    @sheets = []
-    @assignments = []
+    sql = "SELECT name FROM courses WHERE code = '#{params[:code]}'"
+    @course = ActiveRecord::Base.connection.execute(sql)
+    @course.to_a
+   # @course = set_course
+    sql = "SELECT form_id, title FROM forms WHERE course_id = '#{params[:code]}'"
+    #@forms = Form.where(course_id: @course.code)
+    forms = ActiveRecord::Base.connection.execute(sql)
+    forms.to_a
+    puts forms[0]
+    puts "heeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee"
 
-    @forms.each do |f|
-      q = Quiz.find_by_quiz_id(f.form_id)
-      if q
-        @quizzes << q
-        next
-      end
-      f = Feedback.find_by_feedback_id(f.form_id)
-      if f 
-        @feedbacks << f
-        next
-      end
-      s = Sheet.find_by_sheet_id(f.form_id)
-      if s 
-        @sheets << s
-        next
-      end
-      a = Assignment.find_by_assignment_id(f.form_id)
-      if a
-        @assignments << a
-        next
-      end
-    end
+    sql = "SELECT forms.title, quizzes.quiz_id FROM forms INNER JOIN quizzes ON (forms.form_id=quizzes.quiz_id)  WHERE  forms.course_id='#{params[:code]}';"
+    @quizzes = ActiveRecord::Base.connection.execute(sql)
+    @quizzes.to_a
+
+    sql = "SELECT forms.title, feedbacks.feedback_id FROM forms INNER JOIN feedbacks ON (forms.form_id=feedbacks.feedback_id)  WHERE  forms.course_id='#{params[:code]}';"
+    @feedbacks = ActiveRecord::Base.connection.execute(sql)
+    @feedbacks.to_a
+
+    sql = "SELECT forms.title, sheets.sheet_id FROM forms INNER JOIN sheets ON (forms.form_id=sheets.sheet_id)  WHERE  forms.course_id='#{params[:code]}';"
+    @sheets = ActiveRecord::Base.connection.execute(sql)
+    @sheets.to_a
+
+    sql = "SELECT forms.title, assignments.assignment_id FROM forms INNER JOIN assignments ON (forms.form_id=assignments.assignment_id)  WHERE  forms.course_id='#{params[:code]}';"
+    @assignments = ActiveRecord::Base.connection.execute(sql)
+    @assignments.to_a
+
 
     puts "heerrrrreeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee"
     puts @quizzes
@@ -106,6 +103,7 @@ class CoursesController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_course
       @course = Course.find(params[:code])
+      sql = ""
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

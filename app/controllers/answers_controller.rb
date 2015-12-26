@@ -1,21 +1,10 @@
 class AnswersController < ApplicationController
-#	before_filter :authenticate_user!
+	before_filter :authenticate_user!
 
 	def create
 		puts params
 		#st_id = current_user.college_id
-		st_id = 1
-
-		params.each do |q, a|
-			if q =="controller" || q == "action"
-				next
-			end
-			if answer = Answer.new(student_id: st_id, question_id: q.to_i, answer: a)
-				answer.save
-			end
-		end
-		redirect_to '/student'
-	end
+		st_id = current_user.college_id
 
 		form_id = params[:form_id]
 		mark = 0
@@ -24,7 +13,7 @@ class AnswersController < ApplicationController
 			if q =="controller" || q == "action" || q=="form_id"
 				next
 			end
-			Answer.create(student_id: st_id, question_id: q.to_i, answer: a)
+			Answer.create(student_id: st_id, question_id: q.to_i, student_answer: a)
 
 			mark += answer_is_right(q, a)? Question.find(q).mark : 0
 

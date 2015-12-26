@@ -57,8 +57,8 @@
  				</h3>
  				<ul class="list-group">
  					<% @quizzes.each do |q| %>
- 					<li class="list-group-item"><%= link_to "Quiz #{q.quiz_id}", 
- 					form_path(q) , method: "get" %></li>
+ 					<li class="list-group-item"><%= link_to "#{q['title']}", 
+ 					form_path(q["quiz_id"]) , method: "get" %></li>
  						<%end%>
  					</ul>
 					<!-- <button type="button" class="btn btn-success btn-default">
@@ -71,7 +71,7 @@
 				</h3>
 				<ul class="list-group">
 					<% @assignments.each do |a| %>
-					<li class="list-group-item"><%= link_to "Assignment #{a.assignment_id}", form_path(a) , method: "get" %></li>
+					<li class="list-group-item"><%= link_to "#{a['title']}", form_path(a["assignment_id"]) , method: "get" %></li>
 					<%end%>
 				</ul>
 			</div>
@@ -83,7 +83,7 @@
 				</h3>
 				<ul class="list-group">
 					<% @sheets.each do |s| %>
-						<li class="list-group-item"><%= link_to "Sheet #{s.sheet_id}", form_path(s) , method: "get" %></li>
+						<li class="list-group-item"><%= link_to "#{s["title"]}", form_path(s["sheet_id"]) , method: "get" %></li>
 					<%end%>
 				</ul>
 					<!-- <button type="button" class="btn btn-success btn-default">
@@ -96,7 +96,7 @@
 			</h3>
 			<ul class="list-group">
 				<% @feedbacks.each do |f| %>
-					<li class="list-group-item"><%= link_to "Feedback #{f.feedback_id}", form_path(f) , method: "get" %></li>
+					<li class="list-group-item"><%= link_to "#{f["title"]}", form_path(f["feedback_id"]) , method: "get" %></li>
 				<%end%>
 				
 			</ul>

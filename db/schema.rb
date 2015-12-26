@@ -63,9 +63,9 @@ ActiveRecord::Schema.define(version: 20151223113100) do
     t.string "major", limit: 100, default: "XY_PhD"
   end
 
-  create_table "mcq_choices", primary_key: "mcq_id", force: :cascade do |t|
-    t.integer "question_id", null: false
-    t.text    "choice",      null: false
+  create_table "mcq_choices", id: false, force: :cascade do |t|
+    t.integer "mcq_id", null: false
+    t.text    "choice", null: false
   end
 
   create_table "mcqs", primary_key: "mcq_id", force: :cascade do |t|
@@ -167,7 +167,7 @@ ActiveRecord::Schema.define(version: 20151223113100) do
   add_foreign_key "forms", "courses", primary_key: "code", name: "forms_course_id_fkey"
   add_foreign_key "forms", "instructors", primary_key: "instructor_id", name: "forms_instructor_id_fkey"
   add_foreign_key "instructors", "users", column: "instructor_id", primary_key: "college_id", name: "instructors_instructor_id_fkey"
-  add_foreign_key "mcq_choices", "mcqs", column: "question_id", primary_key: "mcq_id", name: "mcq_choices_question_id_fkey"
+  add_foreign_key "mcq_choices", "mcqs", primary_key: "mcq_id", name: "mcq_choices_mcq_id_fkey"
   add_foreign_key "mcqs", "questions", column: "mcq_id", primary_key: "question_id", name: "mcqs_mcq_id_fkey"
   add_foreign_key "numerical_questions", "questions", column: "numerical_question_id", primary_key: "question_id", name: "numerical_questions_numerical_question_id_fkey"
   add_foreign_key "phone_numbers", "users", column: "college_id", primary_key: "college_id", name: "phone_numbers_college_id_fkey"

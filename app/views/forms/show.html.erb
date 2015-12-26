@@ -4,33 +4,31 @@
 	    <div class="panel panel-default">
             <div class="panel-body">
                 <div class="page-header">
-                    <h3><%=@form.title%></h3>
+                    <h3><%=@form[0]["title"]%></h3>
                 </div>
 
 				<form method="post" action="/answers", name="answers1" class="answers2" id="answers3" value="answers4">
 
-				<form method="post" action="/forms/<%=@form.form_id%>/answers/" controller="answers">
+				<form method="post" action="/forms/<%=@form[0]['form_id']%>/answers/" controller="answers">
 				 <!-- for loop according to number of questions from here -->
 					<% if @tfs.size>0 %>
 					    <div class="form-group" > 
 					    	<h4>True or False</h4> 
 							 <!--	 appeared if bouns-->	
 							<% @tfs.each do |q| %>
-							 	<% if q.bonus %> 
-									<label class="text-inline" id="NewQuestion"> <span class="glyphicon glyphicon-asterisk" aria-hidden="true"></span>Bonus</label>		
-								<%end%>							 
+							 								 
 								<!-- -->
 								<label class="text" >
-									 	<%=q.question%>
+									 	<%=q["question"]%>
 									 </label>
 									 <br></br>
 								                 <label for="NewAnswer">Answer</label>
 								<div class="radio">
 								     <label class="radio-inline">
-								         <input type="radio" name=<%=q.question_id%> id="option1 #{<%=q.question_id%>}" value="True"> True
+								         <input type="radio" name='<%=q["question_id"]%>' id="option1 #{<%=q['question_id']%>}" value="True"> True
 								     </label>
 									 <label class="radio-inline">
-									     <input type="radio" name=<%=q.question_id%> id="option2 #{<%=q.question_id%>}" value="False"> False
+									     <input type="radio" name="<%=q['question_id']%>" id="option2 #{<%=q['question_id']%>}" value="False"> False
 									 </label>
 								</div>
 						   <!-- <div class="text">
@@ -75,22 +73,18 @@
 				    <% if @mcqs.size >0 %>
                         <div class="form-group" > 
 							<h4>MCQ</h4>
-                            <% @mcqs.each do |q|%>
+                            <% @mcqs.each do |q|%> <% puts q.question %> <% puts "heeeeeeeeeeeeeeeeeeeey" %>
 								<!--	 appeared if bouns-->					 
-								<% if q.question.bonus %> 
-									<label class="text-inline" id="NewQuestion"> <span class="glyphicon glyphicon-asterisk" aria-hidden="true"></span>Bonus</label>		
-								<%end%>									 
 									 <!-- -->
 								<label class="text" >
-								 	<%=q.question.question%>
+								 	<%=q.question["question"]%>
 								</label>
 								<br></br>
                    		        <label for="NewAnswer">Answer</label>
                                 	<% q.choices.each do |c| %>
 										<div class="radio">
 									    	<label class="radio">
-									   	 		<input type="radio" name=<%=q.question.question_id%> id="Radio1" value=<%=c.mcq_id%>> <%=c.choice%>
-									   	 		<input type="radio" name=<%=q.question.question_id%> id="Radio1" value="<%=c.choice%>"> <%=c.choice%>
+									   	 		<input type="radio" name=<%=q.question["question_id"]%> id="Radio1" value=<%=c%>> <%=c%>
 										    </label>
 										</div>
 									<%end%>
@@ -108,12 +102,9 @@
                             <br><br>
 							<!--	 appeared if bouns-->
 							<% @essayqs.each do |q| %>
-							 	<% if q.bonus %>						 
-							 		<label class="text-inline" id="NewQuestion"> <span class="glyphicon glyphicon-asterisk" aria-hidden="true"></span>Bonus</label>	
-								<%end%>
-
+							 	
 								<label class="text" >
-								 	<%=q.question%>
+								 	<%=q['question']%>
 								 </label>
 								 <br>
 								 <!-- 
@@ -126,7 +117,7 @@
                            </div>
                            <div class="form-group"> -->
                                  <label for="NewAnswer">Answer</label>
-								 <textarea class="form-control" rows="3" placeholder="Your Answer..." name=<%=q.question_id%>></textarea>
+								 <textarea class="form-control" rows="3" placeholder="Your Answer..." name=<%=q['question_id']%>></textarea>
 					 <!--	   </div>
 						  
 						   <div class="text">
@@ -174,12 +165,9 @@
                             <br><br>
 							<!--	 appeared if bouns-->
 							<% @numqs.each do |q| %>
-							 	<% if q.bonus %>						 
-							 		<label class="text-inline" id="NewQuestion"> <span class="glyphicon glyphicon-asterisk" aria-hidden="true"></span>Bonus</label>	
-								<%end%>
-
+							 	
 								<label class="text" >
-								 	<%=q.question%>
+								 	<%=q['question']%>
 								 </label>
 								 <br>
 								 <!-- 
@@ -192,7 +180,7 @@
                            </div>
                            <div class="form-group"> -->
                                  <label for="NewAnswer">Answer</label>
-								 <textarea class="form-control" rows="3" placeholder="Your Answer..." name=<%=q.question_id%>></textarea>
+								 <textarea class="form-control" rows="3" placeholder="Your Answer..." name=<%=q['question_id']%>></textarea>
 					 <!--	   </div>
 						  
 						   <div class="text">
