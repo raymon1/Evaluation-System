@@ -172,56 +172,40 @@ Question.create(question_id: 6, form_id: 1, question: "Who is the first one to s
 Question.create(question_id: 7, form_id: 1, question: "Explain why water boils", mark: 2)
 Question.create(question_id: 8, form_id: 1, question: "How are you doing?", mark: 2)
 #Assignment Sample
-Question.create(question_id: 9, form_id: 9, question: "Are you a rabbit?", mark: 2)
-Question.create(question_id: 10, form_id: 9, question: "Are you a human?", mark: 2)
-Question.create(question_id: 11, form_id: 9, question: "How many is 1+1?", mark: 2)
-Question.create(question_id: 12, form_id: 9, question: "How many fingers do you have?", mark: 2)
-Question.create(question_id: 13, form_id: 9, question: "What is the first computer name?", mark: 2)
-Question.create(question_id: 14, form_id: 9, question: "Who is the first one to set foot on moon?", mark: 2)
-Question.create(question_id: 15, form_id: 9, question: "Explain why water boils", mark: 2)
-Question.create(question_id: 16, form_id: 9, question: "How are you doing?", mark: 2)
-#Sheet Sample
-Question.create(question_id: 17, form_id: 19, question: "Are you a rabbit?", mark: 2)
-Question.create(question_id: 18, form_id: 19, question: "Are you a human?", mark: 2)
-Question.create(question_id: 19, form_id: 19, question: "How many is 1+1?", mark: 2)
-Question.create(question_id: 20, form_id: 19, question: "How many fingers do you have?", mark: 2)
-Question.create(question_id: 21, form_id: 19, question: "What is the first computer name?", mark: 2)
-Question.create(question_id: 22, form_id: 19, question: "Who is the first one to set foot on moon?", mark: 2)
-Question.create(question_id: 23, form_id: 19, question: "Explain why water boils", mark: 2)
-Question.create(question_id: 24, form_id: 19, question: "How are you doing?", mark: 2)
-#Feedback sample
-Question.create(question_id: 25, form_id: 25, question: "Evaluate The Course ", mark: 1)
-Question.create(question_id: 26, form_id: 25, question: "Evaluate The Professor", mark: 1)
-Question.create(question_id: 27, form_id: 25, question: "Are you happy? ", mark: 1)
-Question.create(question_id: 28, form_id: 25, question: "Are you satisfied?", mark: 1)
+# Question.create(question_id: 9, form_id: 9, question: "Are you a rabbit?", mark: 2)
+# Question.create(question_id: 10, form_id: 9, question: "Are you a human?", mark: 2)
+# Question.create(question_id: 11, form_id: 9, question: "How many is 1+1?", mark: 2)
+# Question.create(question_id: 12, form_id: 9, question: "How many fingers do you have?", mark: 2)
+# Question.create(question_id: 13, form_id: 9, question: "What is the first computer name?", mark: 2)
+# Question.create(question_id: 14, form_id: 9, question: "Who is the first one to set foot on moon?", mark: 2)
+# Question.create(question_id: 15, form_id: 9, question: "Explain why water boils", mark: 2)
+# Question.create(question_id: 16, form_id: 9, question: "How are you doing?", mark: 2)
+# #Sheet Sample
+# Question.create(question_id: 17, form_id: 19, question: "Are you a rabbit?", mark: 2)
+# Question.create(question_id: 18, form_id: 19, question: "Are you a human?", mark: 2)
+# Question.create(question_id: 19, form_id: 19, question: "How many is 1+1?", mark: 2)
+# Question.create(question_id: 20, form_id: 19, question: "How many fingers do you have?", mark: 2)
+# Question.create(question_id: 21, form_id: 19, question: "What is the first computer name?", mark: 2)
+# Question.create(question_id: 22, form_id: 19, question: "Who is the first one to set foot on moon?", mark: 2)
+# Question.create(question_id: 23, form_id: 19, question: "Explain why water boils", mark: 2)
+# Question.create(question_id: 24, form_id: 19, question: "How are you doing?", mark: 2)
+# #Feedback sample
+# Question.create(question_id: 25, form_id: 25, question: "Evaluate The Course ", mark: 1)
+# Question.create(question_id: 26, form_id: 25, question: "Evaluate The Professor", mark: 1)
+# Question.create(question_id: 27, form_id: 25, question: "Are you happy? ", mark: 1)
+# Question.create(question_id: 28, form_id: 25, question: "Are you satisfied?", mark: 1)
 
 #tfs
 Tf.create(tf_id: 1, answer: 0)
 Tf.create(tf_id: 2, answer: 1)
-Tf.create(tf_id: 9, answer: 0)
-Tf.create(tf_id: 10, answer: 1)
-Tf.create(tf_id: 17, answer: 0)
-Tf.create(tf_id: 18, answer: 1)
-Tf.create(tf_id: 27, answer: 1)
-Tf.create(tf_id: 28, answer:1 )
 
 #numerical
 NumericalQuestion.create(numerical_question_id: 3, answer: 2)
 NumericalQuestion.create(numerical_question_id: 4, answer: 10)
-NumericalQuestion.create(numerical_question_id: 11, answer: 2)
-NumericalQuestion.create(numerical_question_id: 12, answer: 10)
-NumericalQuestion.create(numerical_question_id: 19, answer: 2)
-NumericalQuestion.create(numerical_question_id: 20, answer: 10)
 
 #MCQS
 Mcq.create(mcq_id: 5, answer: "ENIAC")
 Mcq.create(mcq_id: 6, answer: "Neil Armstrong")
-# Mcq.create(mcq_id: 13, answer: "ENIAC")
-# Mcq.create(mcq_id: 14, answer: "Neil Armstrong")
-# Mcq.create(mcq_id: 21, answer: "ENIAC")
-# Mcq.create(mcq_id: 22, answer: "Neil Armstrong")
-# Mcq.create(mcq_id: 25, answer: "Very Good")
-# Mcq.create(mcq_id: 26, answer: "Very Good")
 
 #mcqs choicees
 McqChoice.create(mcq_id: 5, choice: "Sakhr")
@@ -229,9 +213,18 @@ McqChoice.create(mcq_id: 5, choice: "ENIAC")
 McqChoice.create(mcq_id: 5, choice: "Microsft")
 McqChoice.create(mcq_id: 5, choice: "other")
 McqChoice.create(mcq_id: 6, choice: "Lucy")
-McqChoice.create(mcq_id: 6, choice: "Neil Armstrong")
 McqChoice.create(mcq_id: 6, choice: "Lucky")
+McqChoice.create(mcq_id: 6, choice: "Neil Armstrong")
 
+# McqChoice.create(question_id: 13, mcq_id: 8, choice: "Sakhr")
+# McqChoice.create(question_id: 13, mcq_id: 9, choice: "ENIAC")
+# McqChoice.create(question_id: 14, mcq_id: 10, choice: "Lucy")
+# McqChoice.create(question_id: 14, mcq_id: 11, choice: "Neil Armstrong")
+
+# McqChoice.create(question_id: 21, mcq_id: 12, choice: "Sakhr")
+# McqChoice.create(question_id: 21, mcq_id: 13, choice: "ENIAC")
+# McqChoice.create(question_id: 22, mcq_id: 14, choice: "Lucy")
+# McqChoice.create(question_id: 22, mcq_id: 15, choice: "Neil Armstrong")
 
 # McqChoice.create(question_id: 25, mcq_id: 16, choice: "Fair")
 # McqChoice.create(question_id: 25, mcq_id: 17, choice: "Good")
@@ -246,51 +239,48 @@ McqChoice.create(mcq_id: 6, choice: "Lucky")
 #essay
 EssayQuestion.create(essay_id: 7, answer: "surface presssure is lower than atmospheric pressure")
 EssayQuestion.create(essay_id: 8, answer: "I'm fine")
-EssayQuestion.create(essay_id: 15, answer: "surface presssure is lower than atmospheric pressure")
-EssayQuestion.create(essay_id: 16, answer: "I'm fine")
-EssayQuestion.create(essay_id: 23, answer: "surface presssure is lower than atmospheric pressure")
-EssayQuestion.create(essay_id: 24, answer: "I'm fine")
 
 #Student fill a form
-StudentTakeForm.create(form_id: 1, student_id: 2, student_mark: 10);
-StudentTakeForm.create(form_id: 1, student_id: 3, student_mark: 10);
-StudentTakeForm.create(form_id: 1, student_id: 4, student_mark: 10);
-StudentTakeForm.create(form_id: 1, student_id: 5, student_mark: 10);
-StudentTakeForm.create(form_id: 1, student_id: 6, student_mark: 10);
-StudentTakeForm.create(form_id: 1, student_id: 7, student_mark: 10);
-StudentTakeForm.create(form_id: 1, student_id: 8, student_mark: 10);
-StudentTakeForm.create(form_id: 1, student_id: 9, student_mark: 10);
-StudentTakeForm.create(form_id: 1, student_id: 10, student_mark:10 );
-StudentTakeForm.create(form_id: 9, student_id: 1, student_mark:16 );
-StudentTakeForm.create(form_id: 9, student_id: 2, student_mark:16 );
-StudentTakeForm.create(form_id: 9, student_id: 3, student_mark: 16);
-StudentTakeForm.create(form_id: 9, student_id: 4, student_mark: 16);
-StudentTakeForm.create(form_id: 9, student_id: 5, student_mark: 16);
-StudentTakeForm.create(form_id: 9, student_id: 6, student_mark: 16);
-StudentTakeForm.create(form_id: 9, student_id: 7, student_mark: 16);
-StudentTakeForm.create(form_id: 9, student_id: 8, student_mark: 16);
-StudentTakeForm.create(form_id: 9, student_id: 9, student_mark: 16);
-StudentTakeForm.create(form_id: 9, student_id: 10, student_mark:8 );
-StudentTakeForm.create(form_id: 19, student_id: 1, student_mark:8 );
-StudentTakeForm.create(form_id: 19, student_id: 2, student_mark:8 );
-StudentTakeForm.create(form_id: 19, student_id:3 , student_mark:8 );
-StudentTakeForm.create(form_id: 19, student_id: 4, student_mark:8 );
-StudentTakeForm.create(form_id: 19, student_id: 5, student_mark:8 );
-StudentTakeForm.create(form_id:19 , student_id: 6, student_mark:12 );
-StudentTakeForm.create(form_id:19 , student_id: 7, student_mark:12 );
-StudentTakeForm.create(form_id:19 , student_id: 8, student_mark:12 );
-StudentTakeForm.create(form_id: 19, student_id: 9, student_mark:12 );
-StudentTakeForm.create(form_id: 19, student_id: 10, student_mark:12 );
-StudentTakeForm.create(form_id: 25, student_id: 1, student_mark:0 );
-StudentTakeForm.create(form_id: 25, student_id: 2, student_mark:0 );
-StudentTakeForm.create(form_id: 25, student_id: 3, student_mark:0 );
-StudentTakeForm.create(form_id: 25, student_id: 4, student_mark:0 );
-StudentTakeForm.create(form_id: 25, student_id: 5, student_mark:0 );
-StudentTakeForm.create(form_id: 25, student_id: 6, student_mark:0 );
-StudentTakeForm.create(form_id: 25, student_id: 7, student_mark:0 );
-StudentTakeForm.create(form_id: 25, student_id: 8, student_mark:0 );
-StudentTakeForm.create(form_id: 25, student_id: 9, student_mark:0 );
-StudentTakeForm.create(form_id: 25, student_id: 10, student_mark:0 );
+# #StudentTakeForm.create(form_id: 1, student_id:1 , student_mark: 10);
+# StudentTakeForm.create(form_id: 1, student_id: 2, student_mark: 10);
+# StudentTakeForm.create(form_id: 1, student_id: 3, student_mark: 10);
+# StudentTakeForm.create(form_id: 1, student_id: 4, student_mark: 10);
+# StudentTakeForm.create(form_id: 1, student_id: 5, student_mark: 10);
+# StudentTakeForm.create(form_id: 1, student_id: 6, student_mark: 10);
+# StudentTakeForm.create(form_id: 1, student_id: 7, student_mark: 10);
+# StudentTakeForm.create(form_id: 1, student_id: 8, student_mark: 10);
+# StudentTakeForm.create(form_id: 1, student_id: 9, student_mark: 10);
+# StudentTakeForm.create(form_id: 1, student_id: 10, student_mark:10 );
+# StudentTakeForm.create(form_id: 9, student_id: 1, student_mark:16 );
+# StudentTakeForm.create(form_id: 9, student_id: 2, student_mark:16 );
+# StudentTakeForm.create(form_id: 9, student_id: 3, student_mark: 16);
+# StudentTakeForm.create(form_id: 9, student_id: 4, student_mark: 16);
+# StudentTakeForm.create(form_id: 9, student_id: 5, student_mark: 16);
+# StudentTakeForm.create(form_id: 9, student_id: 6, student_mark: 16);
+# StudentTakeForm.create(form_id: 9, student_id: 7, student_mark: 16);
+# StudentTakeForm.create(form_id: 9, student_id: 8, student_mark: 16);
+# StudentTakeForm.create(form_id: 9, student_id: 9, student_mark: 16);
+# StudentTakeForm.create(form_id: 9, student_id: 10, student_mark:8 );
+# StudentTakeForm.create(form_id: 19, student_id: 1, student_mark:8 );
+# StudentTakeForm.create(form_id: 19, student_id: 2, student_mark:8 );
+# StudentTakeForm.create(form_id: 19, student_id:3 , student_mark:8 );
+# StudentTakeForm.create(form_id: 19, student_id: 4, student_mark:8 );
+# StudentTakeForm.create(form_id: 19, student_id: 5, student_mark:8 );
+# StudentTakeForm.create(form_id:19 , student_id: 6, student_mark:12 );
+# StudentTakeForm.create(form_id:19 , student_id: 7, student_mark:12 );
+# StudentTakeForm.create(form_id:19 , student_id: 8, student_mark:12 );
+# StudentTakeForm.create(form_id: 19, student_id: 9, student_mark:12 );
+# StudentTakeForm.create(form_id: 19, student_id: 10, student_mark:12 );
+# StudentTakeForm.create(form_id: 25, student_id: 1, student_mark:0 );
+# StudentTakeForm.create(form_id: 25, student_id: 2, student_mark:0 );
+# StudentTakeForm.create(form_id: 25, student_id: 3, student_mark:0 );
+# StudentTakeForm.create(form_id: 25, student_id: 4, student_mark:0 );
+# StudentTakeForm.create(form_id: 25, student_id: 5, student_mark:0 );
+# StudentTakeForm.create(form_id: 25, student_id: 6, student_mark:0 );
+# StudentTakeForm.create(form_id: 25, student_id: 7, student_mark:0 );
+# StudentTakeForm.create(form_id: 25, student_id: 8, student_mark:0 );
+# StudentTakeForm.create(form_id: 25, student_id: 9, student_mark:0 );
+# StudentTakeForm.create(form_id: 25, student_id: 10, student_mark:0 );
 
 
 # courses taken by students
